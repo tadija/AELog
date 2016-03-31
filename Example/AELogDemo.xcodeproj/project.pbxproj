@@ -1,0 +1,1039 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B01E8551CADDDD60049F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8541CADDDD60049F98E /* AppDelegate.swift */; };
+		8B01E8571CADDDD60049F98E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8561CADDDD60049F98E /* ViewController.swift */; };
+		8B01E85A1CADDDD60049F98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8581CADDDD60049F98E /* Main.storyboard */; };
+		8B01E85C1CADDDD60049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E85B1CADDDD60049F98E /* Assets.xcassets */; };
+		8B01E85F1CADDDD60049F98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E85D1CADDDD60049F98E /* LaunchScreen.storyboard */; };
+		8B01E8671CADDE030049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
+		8B01E8831CADDEDE0049F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8821CADDEDE0049F98E /* AppDelegate.swift */; };
+		8B01E8851CADDEDE0049F98E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8841CADDEDE0049F98E /* ViewController.swift */; };
+		8B01E8881CADDEDE0049F98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8861CADDEDE0049F98E /* Main.storyboard */; };
+		8B01E88A1CADDEDE0049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8891CADDEDE0049F98E /* Assets.xcassets */; };
+		8B01E8961CADE03E0049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
+		8B01E89D1CADE0F40049F98E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E89B1CADE0F40049F98E /* Interface.storyboard */; };
+		8B01E89F1CADE0F40049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E89E1CADE0F40049F98E /* Assets.xcassets */; };
+		8B01E8A61CADE0F40049F98E /* AELogDemo watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8B01E8A51CADE0F40049F98E /* AELogDemo watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8B01E8AB1CADE0F40049F98E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8AA1CADE0F40049F98E /* InterfaceController.swift */; };
+		8B01E8AD1CADE0F40049F98E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8AC1CADE0F40049F98E /* ExtensionDelegate.swift */; };
+		8B01E8AF1CADE0F40049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8AE1CADE0F40049F98E /* Assets.xcassets */; };
+		8B01E8B31CADE0F40049F98E /* AELogDemo watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8B01E8991CADE0F40049F98E /* AELogDemo watchOS.app */; };
+		8B01E8C21CADE25C0049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
+		8B01E8CC1CADE2E00049F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8CB1CADE2E00049F98E /* AppDelegate.swift */; };
+		8B01E8CE1CADE2E00049F98E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8CD1CADE2E00049F98E /* ViewController.swift */; };
+		8B01E8D01CADE2E00049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8CF1CADE2E00049F98E /* Assets.xcassets */; };
+		8B01E8D31CADE2E00049F98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8D11CADE2E00049F98E /* Main.storyboard */; };
+		8B01E8DE1CADE4F80049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
+		8B01E8EF1CADE6330049F98E /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8E81CADE62B0049F98E /* AELog.framework */; };
+		8B01E8F01CADE6330049F98E /* AELog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8E81CADE62B0049F98E /* AELog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B01E8F31CADE6390049F98E /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EE1CADE62B0049F98E /* AELog.framework */; };
+		8B01E8F41CADE6390049F98E /* AELog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EE1CADE62B0049F98E /* AELog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B01E8F71CADE6410049F98E /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EC1CADE62B0049F98E /* AELog.framework */; };
+		8B01E8F81CADE6410049F98E /* AELog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EC1CADE62B0049F98E /* AELog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B01E8FB1CADE6460049F98E /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EA1CADE62B0049F98E /* AELog.framework */; };
+		8B01E8FC1CADE6460049F98E /* AELog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EA1CADE62B0049F98E /* AELog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B01E8A71CADE0F40049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8491CADDDD60049F98E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B01E8A41CADE0F40049F98E;
+			remoteInfo = "AELogDemo watchOS Extension";
+		};
+		8B01E8B11CADE0F40049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8491CADDDD60049F98E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B01E8981CADE0F40049F98E;
+			remoteInfo = "AELogDemo watchOS";
+		};
+		8B01E8E71CADE62B0049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B5894651CA89F27005F0B9D;
+			remoteInfo = "AELog iOS";
+		};
+		8B01E8E91CADE62B0049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B8464CE1CAB492D0027AA52;
+			remoteInfo = "AELog OSX";
+		};
+		8B01E8EB1CADE62B0049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B8464DE1CAB4B310027AA52;
+			remoteInfo = "AELog watchOS";
+		};
+		8B01E8ED1CADE62B0049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B8464ED1CAB4B870027AA52;
+			remoteInfo = "AELog tvOS";
+		};
+		8B01E8F11CADE6330049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B5894641CA89F27005F0B9D;
+			remoteInfo = "AELog iOS";
+		};
+		8B01E8F51CADE6390049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8464EC1CAB4B870027AA52;
+			remoteInfo = "AELog tvOS";
+		};
+		8B01E8F91CADE6410049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8464DD1CAB4B310027AA52;
+			remoteInfo = "AELog watchOS";
+		};
+		8B01E8FD1CADE6460049F98E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8464CD1CAB492D0027AA52;
+			remoteInfo = "AELog OSX";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B01E87B1CADDE360049F98E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B01E8F01CADE6330049F98E /* AELog.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8951CADDFCD0049F98E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B01E8F41CADE6390049F98E /* AELog.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8B71CADE0F40049F98E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8B01E8A61CADE0F40049F98E /* AELogDemo watchOS Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8BB1CADE0F40049F98E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8B01E8B31CADE0F40049F98E /* AELogDemo watchOS.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8C01CADE11E0049F98E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B01E8F81CADE6410049F98E /* AELog.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8DD1CADE3050049F98E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B01E8FC1CADE6460049F98E /* AELog.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8B01E8511CADDDD60049F98E /* AELogDemo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AELogDemo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B01E8541CADDDD60049F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B01E8561CADDDD60049F98E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B01E8591CADDDD60049F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B01E85B1CADDDD60049F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B01E85E1CADDDD60049F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B01E8601CADDDD60049F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B01E8661CADDE030049F98E /* AELog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AELog.plist; sourceTree = "<group>"; };
+		8B01E8801CADDEDE0049F98E /* AELogDemo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AELogDemo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B01E8821CADDEDE0049F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B01E8841CADDEDE0049F98E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B01E8871CADDEDE0049F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B01E8891CADDEDE0049F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B01E88B1CADDEDE0049F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B01E8991CADE0F40049F98E /* AELogDemo watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AELogDemo watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B01E89C1CADE0F40049F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8B01E89E1CADE0F40049F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B01E8A01CADE0F40049F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B01E8A51CADE0F40049F98E /* AELogDemo watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AELogDemo watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B01E8AA1CADE0F40049F98E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		8B01E8AC1CADE0F40049F98E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		8B01E8AE1CADE0F40049F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B01E8B01CADE0F40049F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B01E8C91CADE2E00049F98E /* AELogDemo OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AELogDemo OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B01E8CB1CADE2E00049F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B01E8CD1CADE2E00049F98E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B01E8CF1CADE2E00049F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B01E8D21CADE2E00049F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B01E8D41CADE2E00049F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AELog.xcodeproj; path = ../AELog.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B01E84E1CADDDD60049F98E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8EF1CADE6330049F98E /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E87D1CADDEDE0049F98E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8F31CADE6390049F98E /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8A21CADE0F40049F98E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8F71CADE6410049F98E /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8C61CADE2E00049F98E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8FB1CADE6460049F98E /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B01E8481CADDDD60049F98E = {
+			isa = PBXGroup;
+			children = (
+				8B01E8661CADDE030049F98E /* AELog.plist */,
+				8B01E8531CADDDD60049F98E /* AELogDemo iOS */,
+				8B01E8811CADDEDE0049F98E /* AELogDemo tvOS */,
+				8B01E8C31CADE2AE0049F98E /* AELogDemo watchOS */,
+				8B01E8CA1CADE2E00049F98E /* AELogDemo OSX */,
+				8B01E8521CADDDD60049F98E /* Products */,
+				8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		8B01E8521CADDDD60049F98E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8511CADDDD60049F98E /* AELogDemo iOS.app */,
+				8B01E8801CADDEDE0049F98E /* AELogDemo tvOS.app */,
+				8B01E8991CADE0F40049F98E /* AELogDemo watchOS.app */,
+				8B01E8A51CADE0F40049F98E /* AELogDemo watchOS Extension.appex */,
+				8B01E8C91CADE2E00049F98E /* AELogDemo OSX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B01E8531CADDDD60049F98E /* AELogDemo iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8541CADDDD60049F98E /* AppDelegate.swift */,
+				8B01E8561CADDDD60049F98E /* ViewController.swift */,
+				8B01E88F1CADDF910049F98E /* Supporting Files */,
+			);
+			path = "AELogDemo iOS";
+			sourceTree = "<group>";
+		};
+		8B01E8811CADDEDE0049F98E /* AELogDemo tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8821CADDEDE0049F98E /* AppDelegate.swift */,
+				8B01E8841CADDEDE0049F98E /* ViewController.swift */,
+				8B01E8901CADDFA30049F98E /* Supporting Files */,
+			);
+			path = "AELogDemo tvOS";
+			sourceTree = "<group>";
+		};
+		8B01E88F1CADDF910049F98E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8581CADDDD60049F98E /* Main.storyboard */,
+				8B01E85B1CADDDD60049F98E /* Assets.xcassets */,
+				8B01E85D1CADDDD60049F98E /* LaunchScreen.storyboard */,
+				8B01E8601CADDDD60049F98E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B01E8901CADDFA30049F98E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8861CADDEDE0049F98E /* Main.storyboard */,
+				8B01E8891CADDEDE0049F98E /* Assets.xcassets */,
+				8B01E88B1CADDEDE0049F98E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B01E89A1CADE0F40049F98E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E89B1CADE0F40049F98E /* Interface.storyboard */,
+				8B01E89E1CADE0F40049F98E /* Assets.xcassets */,
+				8B01E8A01CADE0F40049F98E /* Info.plist */,
+			);
+			name = App;
+			path = "AELogDemo watchOS";
+			sourceTree = "<group>";
+		};
+		8B01E8A91CADE0F40049F98E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8AA1CADE0F40049F98E /* InterfaceController.swift */,
+				8B01E8AC1CADE0F40049F98E /* ExtensionDelegate.swift */,
+				8B01E8C41CADE2C40049F98E /* Supporting Files */,
+			);
+			name = Extension;
+			path = "AELogDemo watchOS Extension";
+			sourceTree = "<group>";
+		};
+		8B01E8C31CADE2AE0049F98E /* AELogDemo watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E89A1CADE0F40049F98E /* App */,
+				8B01E8A91CADE0F40049F98E /* Extension */,
+			);
+			name = "AELogDemo watchOS";
+			sourceTree = "<group>";
+		};
+		8B01E8C41CADE2C40049F98E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8AE1CADE0F40049F98E /* Assets.xcassets */,
+				8B01E8B01CADE0F40049F98E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B01E8CA1CADE2E00049F98E /* AELogDemo OSX */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8CB1CADE2E00049F98E /* AppDelegate.swift */,
+				8B01E8CD1CADE2E00049F98E /* ViewController.swift */,
+				8B01E8D81CADE2F90049F98E /* Supporting Files */,
+			);
+			path = "AELogDemo OSX";
+			sourceTree = "<group>";
+		};
+		8B01E8D81CADE2F90049F98E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8CF1CADE2E00049F98E /* Assets.xcassets */,
+				8B01E8D11CADE2E00049F98E /* Main.storyboard */,
+				8B01E8D41CADE2E00049F98E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B01E8E11CADE62B0049F98E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E8E81CADE62B0049F98E /* AELog.framework */,
+				8B01E8EA1CADE62B0049F98E /* AELog.framework */,
+				8B01E8EC1CADE62B0049F98E /* AELog.framework */,
+				8B01E8EE1CADE62B0049F98E /* AELog.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B01E8501CADDDD60049F98E /* AELogDemo iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B01E8631CADDDD60049F98E /* Build configuration list for PBXNativeTarget "AELogDemo iOS" */;
+			buildPhases = (
+				8B01E84D1CADDDD60049F98E /* Sources */,
+				8B01E84E1CADDDD60049F98E /* Frameworks */,
+				8B01E84F1CADDDD60049F98E /* Resources */,
+				8B01E87B1CADDE360049F98E /* Embed Frameworks */,
+				8B01E8BB1CADE0F40049F98E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B01E8B21CADE0F40049F98E /* PBXTargetDependency */,
+				8B01E8F21CADE6330049F98E /* PBXTargetDependency */,
+			);
+			name = "AELogDemo iOS";
+			productName = AELogDemo;
+			productReference = 8B01E8511CADDDD60049F98E /* AELogDemo iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B01E87F1CADDEDE0049F98E /* AELogDemo tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B01E88C1CADDEDE0049F98E /* Build configuration list for PBXNativeTarget "AELogDemo tvOS" */;
+			buildPhases = (
+				8B01E87C1CADDEDE0049F98E /* Sources */,
+				8B01E87D1CADDEDE0049F98E /* Frameworks */,
+				8B01E87E1CADDEDE0049F98E /* Resources */,
+				8B01E8951CADDFCD0049F98E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B01E8F61CADE6390049F98E /* PBXTargetDependency */,
+			);
+			name = "AELogDemo tvOS";
+			productName = "AELogDemo tvOS";
+			productReference = 8B01E8801CADDEDE0049F98E /* AELogDemo tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B01E8981CADE0F40049F98E /* AELogDemo watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B01E8B81CADE0F40049F98E /* Build configuration list for PBXNativeTarget "AELogDemo watchOS" */;
+			buildPhases = (
+				8B01E8971CADE0F40049F98E /* Resources */,
+				8B01E8B71CADE0F40049F98E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B01E8A81CADE0F40049F98E /* PBXTargetDependency */,
+			);
+			name = "AELogDemo watchOS";
+			productName = "AELogDemo watchOS";
+			productReference = 8B01E8991CADE0F40049F98E /* AELogDemo watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8B01E8A41CADE0F40049F98E /* AELogDemo watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B01E8B41CADE0F40049F98E /* Build configuration list for PBXNativeTarget "AELogDemo watchOS Extension" */;
+			buildPhases = (
+				8B01E8A11CADE0F40049F98E /* Sources */,
+				8B01E8A21CADE0F40049F98E /* Frameworks */,
+				8B01E8A31CADE0F40049F98E /* Resources */,
+				8B01E8C01CADE11E0049F98E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B01E8FA1CADE6410049F98E /* PBXTargetDependency */,
+			);
+			name = "AELogDemo watchOS Extension";
+			productName = "AELogDemo watchOS Extension";
+			productReference = 8B01E8A51CADE0F40049F98E /* AELogDemo watchOS Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		8B01E8C81CADE2E00049F98E /* AELogDemo OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B01E8D51CADE2E00049F98E /* Build configuration list for PBXNativeTarget "AELogDemo OSX" */;
+			buildPhases = (
+				8B01E8C51CADE2E00049F98E /* Sources */,
+				8B01E8C61CADE2E00049F98E /* Frameworks */,
+				8B01E8C71CADE2E00049F98E /* Resources */,
+				8B01E8DD1CADE3050049F98E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B01E8FE1CADE6460049F98E /* PBXTargetDependency */,
+			);
+			name = "AELogDemo OSX";
+			productName = "AELogDemo OSX";
+			productReference = 8B01E8C91CADE2E00049F98E /* AELogDemo OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B01E8491CADDDD60049F98E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = AE;
+				TargetAttributes = {
+					8B01E8501CADDDD60049F98E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8B01E87F1CADDEDE0049F98E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8B01E8981CADE0F40049F98E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8B01E8A41CADE0F40049F98E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8B01E8C81CADE2E00049F98E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 8B01E84C1CADDDD60049F98E /* Build configuration list for PBXProject "AELogDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B01E8481CADDDD60049F98E;
+			productRefGroup = 8B01E8521CADDDD60049F98E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8B01E8E11CADE62B0049F98E /* Products */;
+					ProjectRef = 8B01E8E01CADE62B0049F98E /* AELog.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8B01E8501CADDDD60049F98E /* AELogDemo iOS */,
+				8B01E87F1CADDEDE0049F98E /* AELogDemo tvOS */,
+				8B01E8981CADE0F40049F98E /* AELogDemo watchOS */,
+				8B01E8A41CADE0F40049F98E /* AELogDemo watchOS Extension */,
+				8B01E8C81CADE2E00049F98E /* AELogDemo OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8B01E8E81CADE62B0049F98E /* AELog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AELog.framework;
+			remoteRef = 8B01E8E71CADE62B0049F98E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8B01E8EA1CADE62B0049F98E /* AELog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AELog.framework;
+			remoteRef = 8B01E8E91CADE62B0049F98E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8B01E8EC1CADE62B0049F98E /* AELog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AELog.framework;
+			remoteRef = 8B01E8EB1CADE62B0049F98E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8B01E8EE1CADE62B0049F98E /* AELog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AELog.framework;
+			remoteRef = 8B01E8ED1CADE62B0049F98E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B01E84F1CADDDD60049F98E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E85F1CADDDD60049F98E /* LaunchScreen.storyboard in Resources */,
+				8B01E8671CADDE030049F98E /* AELog.plist in Resources */,
+				8B01E85C1CADDDD60049F98E /* Assets.xcassets in Resources */,
+				8B01E85A1CADDDD60049F98E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E87E1CADDEDE0049F98E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E88A1CADDEDE0049F98E /* Assets.xcassets in Resources */,
+				8B01E8881CADDEDE0049F98E /* Main.storyboard in Resources */,
+				8B01E8961CADE03E0049F98E /* AELog.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8971CADE0F40049F98E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E89F1CADE0F40049F98E /* Assets.xcassets in Resources */,
+				8B01E89D1CADE0F40049F98E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8A31CADE0F40049F98E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8AF1CADE0F40049F98E /* Assets.xcassets in Resources */,
+				8B01E8C21CADE25C0049F98E /* AELog.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8C71CADE2E00049F98E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8D01CADE2E00049F98E /* Assets.xcassets in Resources */,
+				8B01E8D31CADE2E00049F98E /* Main.storyboard in Resources */,
+				8B01E8DE1CADE4F80049F98E /* AELog.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B01E84D1CADDDD60049F98E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8571CADDDD60049F98E /* ViewController.swift in Sources */,
+				8B01E8551CADDDD60049F98E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E87C1CADDEDE0049F98E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8851CADDEDE0049F98E /* ViewController.swift in Sources */,
+				8B01E8831CADDEDE0049F98E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8A11CADE0F40049F98E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8AD1CADE0F40049F98E /* ExtensionDelegate.swift in Sources */,
+				8B01E8AB1CADE0F40049F98E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B01E8C51CADE2E00049F98E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B01E8CE1CADE2E00049F98E /* ViewController.swift in Sources */,
+				8B01E8CC1CADE2E00049F98E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B01E8A81CADE0F40049F98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B01E8A41CADE0F40049F98E /* AELogDemo watchOS Extension */;
+			targetProxy = 8B01E8A71CADE0F40049F98E /* PBXContainerItemProxy */;
+		};
+		8B01E8B21CADE0F40049F98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B01E8981CADE0F40049F98E /* AELogDemo watchOS */;
+			targetProxy = 8B01E8B11CADE0F40049F98E /* PBXContainerItemProxy */;
+		};
+		8B01E8F21CADE6330049F98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AELog iOS";
+			targetProxy = 8B01E8F11CADE6330049F98E /* PBXContainerItemProxy */;
+		};
+		8B01E8F61CADE6390049F98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AELog tvOS";
+			targetProxy = 8B01E8F51CADE6390049F98E /* PBXContainerItemProxy */;
+		};
+		8B01E8FA1CADE6410049F98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AELog watchOS";
+			targetProxy = 8B01E8F91CADE6410049F98E /* PBXContainerItemProxy */;
+		};
+		8B01E8FE1CADE6460049F98E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AELog OSX";
+			targetProxy = 8B01E8FD1CADE6460049F98E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B01E8581CADDDD60049F98E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B01E8591CADDDD60049F98E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B01E85D1CADDDD60049F98E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B01E85E1CADDDD60049F98E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8B01E8861CADDEDE0049F98E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B01E8871CADDEDE0049F98E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B01E89B1CADE0F40049F98E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B01E89C1CADE0F40049F98E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		8B01E8D11CADE2E00049F98E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B01E8D21CADE2E00049F98E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B01E8611CADDDD60049F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B01E8621CADDDD60049F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B01E8641CADDDD60049F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8B01E8651CADDDD60049F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8B01E88D1CADDEDE0049F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		8B01E88E1CADDEDE0049F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		8B01E8B51CADE0F40049F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		8B01E8B61CADE0F40049F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		8B01E8B91CADE0F40049F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = AELogDemo_watchOS_Extension;
+				INFOPLIST_FILE = "AELogDemo watchOS/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		8B01E8BA1CADE0F40049F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = AELogDemo_watchOS_Extension;
+				INFOPLIST_FILE = "AELogDemo watchOS/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		8B01E8D61CADE2E00049F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8B01E8D71CADE2E00049F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "AELogDemo OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B01E84C1CADDDD60049F98E /* Build configuration list for PBXProject "AELogDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B01E8611CADDDD60049F98E /* Debug */,
+				8B01E8621CADDDD60049F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B01E8631CADDDD60049F98E /* Build configuration list for PBXNativeTarget "AELogDemo iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B01E8641CADDDD60049F98E /* Debug */,
+				8B01E8651CADDDD60049F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B01E88C1CADDEDE0049F98E /* Build configuration list for PBXNativeTarget "AELogDemo tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B01E88D1CADDEDE0049F98E /* Debug */,
+				8B01E88E1CADDEDE0049F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B01E8B41CADE0F40049F98E /* Build configuration list for PBXNativeTarget "AELogDemo watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B01E8B51CADE0F40049F98E /* Debug */,
+				8B01E8B61CADE0F40049F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B01E8B81CADE0F40049F98E /* Build configuration list for PBXNativeTarget "AELogDemo watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B01E8B91CADE0F40049F98E /* Debug */,
+				8B01E8BA1CADE0F40049F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B01E8D51CADE2E00049F98E /* Build configuration list for PBXNativeTarget "AELogDemo OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B01E8D61CADE2E00049F98E /* Debug */,
+				8B01E8D71CADE2E00049F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B01E8491CADDDD60049F98E /* Project object */;
+}
