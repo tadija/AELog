@@ -103,12 +103,18 @@ public struct AELogLine: CustomStringConvertible {
     
     // MARK: Properties
     
-    private let timestamp: NSDate
-    private let thread: NSThread
-    private let file: String
-    private let line: Int
-    private let function: String
-    private let message: String
+    /// Timestamp
+    public let timestamp: NSDate
+    /// Thread
+    public let thread: NSThread
+    /// Filename (without extension)
+    public let file: String
+    /// Line of code
+    public let line: Int
+    /// Function
+    public let function: String
+    /// Custom message
+    public let message: String
     
     // MARK: - CustomStringConvertible
     
@@ -154,10 +160,14 @@ public class AELogSettings {
         
         /// Dictionary - Key: file name without extension, Value: Boolean (defaults to empty - all files log enabled)
         public static let Files = "Files"
+        
+        /// String - Date format which will be used in log lines. (defaults to "yyyy-MM-dd HH:mm:ss.SSS")
+        public static let DateFormat = "DateFormat"
     }
     
     private struct Default {
         private static let Enabled = true
+        private static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
     }
     
     // MARK: Properties
@@ -176,7 +186,7 @@ public class AELogSettings {
     // MARK: Init
     
     public init() {
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        dateFormatter.dateFormat = dateFormat
     }
     
     // MARK: Settings
@@ -195,6 +205,14 @@ public class AELogSettings {
             files = settings[Key.Files] as? [String : Bool]
         else { return nil }
         return files
+    }()
+    
+    private lazy var dateFormat: String? = { [unowned self] in
+        guard let
+            settings = self.plist,
+            format = settings[Key.DateFormat] as? String
+        else { return Default.DateFormat }
+        return format
     }()
     
 }

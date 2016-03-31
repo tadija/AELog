@@ -11,5 +11,7 @@
 		<key>InterfaceController</key>
 		<true/>
 	</dict>
+	<key>DateFormat</key>
+	<string>yyyy-MM-dd HH:mm:ss.SSS</string>
 </dict>
 </plist>
