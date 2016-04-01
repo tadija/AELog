@@ -104,7 +104,7 @@ public struct AELogLine: CustomStringConvertible {
     // MARK: Properties
     
     /// Timestamp
-    public let timestamp: NSDate
+    public let date: NSDate
     /// Thread
     public let thread: NSThread
     /// Filename (without extension)
@@ -116,26 +116,37 @@ public struct AELogLine: CustomStringConvertible {
     /// Custom message
     public let message: String
     
-    // MARK: - CustomStringConvertible
-    
-    /// Concatenated text representation of a complete log line
-    public var description: String {
-        let date = AELog.sharedInstance.settings.dateFormatter.stringFromDate(timestamp)
-        let threadName = thread.isMainThread ? "Main" : (thread.name ?? "Unknown")
-        let message = self.message == "" ? "" : " | \"\(self.message)\""
-        let desc = "\(date) -- [\(threadName)] \(self.file) (\(self.line)) -> \(self.function)\(message)"
-        return desc
-    }
-    
     // MARK: Init
     
     private init(thread: NSThread, file: String, line: Int, function: String, message: String) {
-        self.timestamp = NSDate()
+        self.date = NSDate()
         self.thread = thread
         self.file = file
         self.line = line
         self.function = function
         self.message = message
+    }
+    
+    // MARK: - CustomStringConvertible
+    
+    /// Concatenated text representation of a complete log line
+    public var description: String {
+        let date = AELog.sharedInstance.settings.dateFormatter.stringFromDate(self.date)
+        let thread = self.thread.isMainThread ? "Main" : (self.thread.name ?? "Unknown")
+        let desc = parse(date: date, thread: thread, file: file, line: line, function: function, message: message)
+        return desc
+    }
+    
+    private func parse(
+        date date: String, thread: String, file: String, line: Int, function: String, message: String) -> String {
+        let result = AELog.sharedInstance.settings.template
+            .stringByReplacingOccurrencesOfString("{date}", withString: date)
+            .stringByReplacingOccurrencesOfString("{thread}", withString: thread)
+            .stringByReplacingOccurrencesOfString("{file}", withString: file)
+            .stringByReplacingOccurrencesOfString("{line}", withString: "\(line)")
+            .stringByReplacingOccurrencesOfString("{function}", withString: function)
+            .stringByReplacingOccurrencesOfString("{message}", withString: message)
+        return result
     }
     
 }
@@ -163,11 +174,15 @@ public class AELogSettings {
         
         /// String - Date format which will be used in log lines. (defaults to "yyyy-MM-dd HH:mm:ss.SSS")
         public static let DateFormat = "DateFormat"
+        
+        /// String - Log lines template. (defaults to "{date} -- [{thread}] {file} ({line}) -> {function} > {message}")
+        public static let Template = "Template"
     }
     
     private struct Default {
         private static let Enabled = true
         private static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        private static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
     }
     
     // MARK: Properties
@@ -213,6 +228,14 @@ public class AELogSettings {
             format = settings[Key.DateFormat] as? String
         else { return Default.DateFormat }
         return format
+    }()
+    
+    private lazy var template: String = { [unowned self] in
+        guard let
+            settings = self.plist,
+            template = settings[Key.Template] as? String
+        else { return Default.Template }
+        return template
     }()
     
 }
