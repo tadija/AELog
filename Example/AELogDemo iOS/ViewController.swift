@@ -31,16 +31,4 @@ class ViewController: UIViewController {
         generateLogLines(count: Int.random(max: 218))
     }
     
-    private func generateLogLines(count count: Int) {
-        for i in 0...count {
-            aelog("I'm just a log line #\(i).")
-        }
-    }
-    
-}
-
-extension Int {
-    static func random(min: Int = 0, max: Int = Int.max) -> Int {
-        return Int(arc4random_uniform(UInt32((max - min) + 1))) + min
-    }
 }
