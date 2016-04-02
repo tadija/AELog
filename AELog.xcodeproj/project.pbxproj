@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B04F5661CB009DD0002F869 /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04F5651CB009DD0002F869 /* AELogTests.swift */; };
+		8B04F5681CB009DD0002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B5894651CA89F27005F0B9D /* AELog.framework */; };
+		8B04F5771CB00AA60002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8464ED1CAB4B870027AA52 /* AELog.framework */; };
+		8B04F57D1CB00AB70002F869 /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04F5651CB009DD0002F869 /* AELogTests.swift */; };
+		8B04F5871CB00B420002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8464CE1CAB492D0027AA52 /* AELog.framework */; };
+		8B04F58D1CB00B4E0002F869 /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B04F5651CB009DD0002F869 /* AELogTests.swift */; };
 		8B5894691CA89F27005F0B9D /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B5894711CA89F6C005F0B9D /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
 		8B8464D61CAB4AED0027AA52 /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
@@ -17,7 +23,36 @@
 		8B8464F61CAB4BA40027AA52 /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8B04F5691CB009DD0002F869 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B58945C1CA89F27005F0B9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B5894641CA89F27005F0B9D;
+			remoteInfo = "AELog iOS";
+		};
+		8B04F5781CB00AA60002F869 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B58945C1CA89F27005F0B9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8464EC1CAB4B870027AA52;
+			remoteInfo = "AELog tvOS";
+		};
+		8B04F5881CB00B420002F869 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B58945C1CA89F27005F0B9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8464CD1CAB492D0027AA52;
+			remoteInfo = "AELog OSX";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		8B04F5631CB009DD0002F869 /* AELog iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AELog iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B04F5651CB009DD0002F869 /* AELogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AELogTests.swift; sourceTree = "<group>"; };
+		8B04F5671CB009DD0002F869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B04F5721CB00AA60002F869 /* AELog tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AELog tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B04F5821CB00B420002F869 /* AELog OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AELog OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5894651CA89F27005F0B9D /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5894681CA89F27005F0B9D /* AELog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELog.h; sourceTree = "<group>"; };
 		8B58946A1CA89F27005F0B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +66,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8B04F5601CB009DD0002F869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04F5681CB009DD0002F869 /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04F56F1CB00AA60002F869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04F5771CB00AA60002F869 /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04F57F1CB00B420002F869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04F5871CB00B420002F869 /* AELog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B5894611CA89F27005F0B9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,10 +121,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B04F5641CB009DD0002F869 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8B04F5651CB009DD0002F869 /* AELogTests.swift */,
+				8B04F5671CB009DD0002F869 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		8B58945B1CA89F27005F0B9D = {
 			isa = PBXGroup;
 			children = (
 				8B5894671CA89F27005F0B9D /* Sources */,
+				8B04F5641CB009DD0002F869 /* Tests */,
 				8B5894661CA89F27005F0B9D /* Products */,
 				8BE817A91CAF42C500FCBE4A /* LICENSE */,
 				8BE817AA1CAF42C500FCBE4A /* README.md */,
@@ -80,6 +149,9 @@
 				8B8464CE1CAB492D0027AA52 /* AELog.framework */,
 				8B8464DE1CAB4B310027AA52 /* AELog.framework */,
 				8B8464ED1CAB4B870027AA52 /* AELog.framework */,
+				8B04F5631CB009DD0002F869 /* AELog iOS Tests.xctest */,
+				8B04F5721CB00AA60002F869 /* AELog tvOS Tests.xctest */,
+				8B04F5821CB00B420002F869 /* AELog OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +212,60 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8B04F5621CB009DD0002F869 /* AELog iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B04F56D1CB009DD0002F869 /* Build configuration list for PBXNativeTarget "AELog iOS Tests" */;
+			buildPhases = (
+				8B04F55F1CB009DD0002F869 /* Sources */,
+				8B04F5601CB009DD0002F869 /* Frameworks */,
+				8B04F5611CB009DD0002F869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B04F56A1CB009DD0002F869 /* PBXTargetDependency */,
+			);
+			name = "AELog iOS Tests";
+			productName = "AELog iOS Tests";
+			productReference = 8B04F5631CB009DD0002F869 /* AELog iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B04F5711CB00AA60002F869 /* AELog tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B04F57A1CB00AA60002F869 /* Build configuration list for PBXNativeTarget "AELog tvOS Tests" */;
+			buildPhases = (
+				8B04F56E1CB00AA60002F869 /* Sources */,
+				8B04F56F1CB00AA60002F869 /* Frameworks */,
+				8B04F5701CB00AA60002F869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B04F5791CB00AA60002F869 /* PBXTargetDependency */,
+			);
+			name = "AELog tvOS Tests";
+			productName = "AELog tvOS Tests";
+			productReference = 8B04F5721CB00AA60002F869 /* AELog tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B04F5811CB00B420002F869 /* AELog OSX Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B04F58A1CB00B420002F869 /* Build configuration list for PBXNativeTarget "AELog OSX Tests" */;
+			buildPhases = (
+				8B04F57E1CB00B420002F869 /* Sources */,
+				8B04F57F1CB00B420002F869 /* Frameworks */,
+				8B04F5801CB00B420002F869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B04F5891CB00B420002F869 /* PBXTargetDependency */,
+			);
+			name = "AELog OSX Tests";
+			productName = "AELog OSX Tests";
+			productReference = 8B04F5821CB00B420002F869 /* AELog OSX Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8B5894641CA89F27005F0B9D /* AELog iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B58946D1CA89F27005F0B9D /* Build configuration list for PBXNativeTarget "AELog iOS" */;
@@ -218,9 +344,19 @@
 		8B58945C1CA89F27005F0B9D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = AE;
 				TargetAttributes = {
+					8B04F5621CB009DD0002F869 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8B04F5711CB00AA60002F869 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					8B04F5811CB00B420002F869 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					8B5894641CA89F27005F0B9D = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -248,14 +384,38 @@
 			projectRoot = "";
 			targets = (
 				8B5894641CA89F27005F0B9D /* AELog iOS */,
-				8B8464CD1CAB492D0027AA52 /* AELog OSX */,
 				8B8464DD1CAB4B310027AA52 /* AELog watchOS */,
+				8B04F5621CB009DD0002F869 /* AELog iOS Tests */,
 				8B8464EC1CAB4B870027AA52 /* AELog tvOS */,
+				8B04F5711CB00AA60002F869 /* AELog tvOS Tests */,
+				8B8464CD1CAB492D0027AA52 /* AELog OSX */,
+				8B04F5811CB00B420002F869 /* AELog OSX Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8B04F5611CB009DD0002F869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04F5701CB00AA60002F869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04F5801CB00B420002F869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B5894631CA89F27005F0B9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +447,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8B04F55F1CB009DD0002F869 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04F5661CB009DD0002F869 /* AELogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04F56E1CB00AA60002F869 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04F57D1CB00AB70002F869 /* AELogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B04F57E1CB00B420002F869 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B04F58D1CB00B4E0002F869 /* AELogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B5894601CA89F27005F0B9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,7 +505,99 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8B04F56A1CB009DD0002F869 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B5894641CA89F27005F0B9D /* AELog iOS */;
+			targetProxy = 8B04F5691CB009DD0002F869 /* PBXContainerItemProxy */;
+		};
+		8B04F5791CB00AA60002F869 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8464EC1CAB4B870027AA52 /* AELog tvOS */;
+			targetProxy = 8B04F5781CB00AA60002F869 /* PBXContainerItemProxy */;
+		};
+		8B04F5891CB00B420002F869 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8464CD1CAB492D0027AA52 /* AELog OSX */;
+			targetProxy = 8B04F5881CB00B420002F869 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8B04F56B1CB009DD0002F869 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8B04F56C1CB009DD0002F869 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8B04F57B1CB00AA60002F869 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		8B04F57C1CB00AA60002F869 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		8B04F58B1CB00B420002F869 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-OSX-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8B04F58C1CB00B420002F869 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-OSX-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		8B58946B1CA89F27005F0B9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -579,6 +855,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8B04F56D1CB009DD0002F869 /* Build configuration list for PBXNativeTarget "AELog iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B04F56B1CB009DD0002F869 /* Debug */,
+				8B04F56C1CB009DD0002F869 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8B04F57A1CB00AA60002F869 /* Build configuration list for PBXNativeTarget "AELog tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B04F57B1CB00AA60002F869 /* Debug */,
+				8B04F57C1CB00AA60002F869 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8B04F58A1CB00B420002F869 /* Build configuration list for PBXNativeTarget "AELog OSX Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B04F58B1CB00B420002F869 /* Debug */,
+				8B04F58C1CB00B420002F869 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8B58945F1CA89F27005F0B9D /* Build configuration list for PBXProject "AELog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
