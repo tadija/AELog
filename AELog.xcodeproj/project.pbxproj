@@ -53,6 +53,8 @@
 		8B04F5671CB009DD0002F869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B04F5721CB00AA60002F869 /* AELog tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AELog tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B04F5821CB00B420002F869 /* AELog OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AELog OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B04F58F1CB060CC0002F869 /* AELog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AELog.podspec; sourceTree = "<group>"; };
+		8B04F5901CB064D20002F869 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		8B5894651CA89F27005F0B9D /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5894681CA89F27005F0B9D /* AELog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELog.h; sourceTree = "<group>"; };
 		8B58946A1CA89F27005F0B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,9 +127,29 @@
 			isa = PBXGroup;
 			children = (
 				8B04F5651CB009DD0002F869 /* AELogTests.swift */,
-				8B04F5671CB009DD0002F869 /* Info.plist */,
+				8B04F5921CB065510002F869 /* Supporting Files */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		8B04F5911CB065260002F869 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BE817A91CAF42C500FCBE4A /* LICENSE */,
+				8BE817AA1CAF42C500FCBE4A /* README.md */,
+				8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */,
+				8B04F58F1CB060CC0002F869 /* AELog.podspec */,
+				8B04F5901CB064D20002F869 /* Package.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B04F5921CB065510002F869 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B04F5671CB009DD0002F869 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		8B58945B1CA89F27005F0B9D = {
@@ -136,9 +158,7 @@
 				8B5894671CA89F27005F0B9D /* Sources */,
 				8B04F5641CB009DD0002F869 /* Tests */,
 				8B5894661CA89F27005F0B9D /* Products */,
-				8BE817A91CAF42C500FCBE4A /* LICENSE */,
-				8BE817AA1CAF42C500FCBE4A /* README.md */,
-				8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */,
+				8B04F5911CB065260002F869 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};

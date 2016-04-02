@@ -1,5 +1,5 @@
 //
-// AELog.h
+// Package.swift
 //
 // Copyright (c) 2016 Marko Tadić <tadija@me.com> http://tadija.net
 //
@@ -22,7 +22,8 @@
 // SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+import PackageDescription
 
-FOUNDATION_EXPORT double AELogVersionNumber;
-FOUNDATION_EXPORT const unsigned char AELogVersionString[];
+let package = Package(
+    name: "AELog"
+)
