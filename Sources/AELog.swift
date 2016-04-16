@@ -51,6 +51,7 @@ public class AELog {
     private static let sharedInstance = AELog()
     private let settings = AELogSettings()
     private weak var delegate: AELogDelegate?
+    private let logQueue = dispatch_queue_create("AELog", nil)
     
     // MARK: API
 
@@ -60,7 +61,7 @@ public class AELog {
     }
     
     private func log(thread thread: NSThread, path: String, line: Int, function: String, message: String) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) { [unowned self] in
+        dispatch_async(logQueue) { [unowned self] in
             if self.settings.enabled {
                 let file = self.fileNameForPath(path)
                 if self.fileEnabled(file) {
@@ -122,6 +123,16 @@ public struct AELogLine: CustomStringConvertible {
     /// Custom message
     public let message: String
     
+    private var threadName: String {
+        if thread.isMainThread {
+            return "Main"
+        } else if let name = thread.name where !name.isEmpty {
+            return name
+        } else {
+            return String(format:"%p", thread)
+        }
+    }
+    
     // MARK: Init
     
     private init(thread: NSThread, file: String, line: Int, function: String, message: String) {
@@ -138,9 +149,7 @@ public struct AELogLine: CustomStringConvertible {
     /// Concatenated text representation of a complete log line
     public var description: String {
         let date = AELog.sharedInstance.settings.dateFormatter.stringFromDate(self.date)
-        let threadName = (self.thread.name ?? "Unknown").isEmpty ? "Unknown" : self.thread.name!
-        let thread = self.thread.isMainThread ? "Main" : threadName
-        let desc = parse(date: date, thread: thread, file: file, line: line, function: function, message: message)
+        let desc = parse(date: date, thread: threadName, file: file, line: line, function: function, message: message)
         return desc
     }
     
