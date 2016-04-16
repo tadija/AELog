@@ -882,6 +882,7 @@
 				8B04F56C1CB009DD0002F869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B04F57A1CB00AA60002F869 /* Build configuration list for PBXNativeTarget "AELog tvOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -890,6 +891,7 @@
 				8B04F57C1CB00AA60002F869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B04F58A1CB00B420002F869 /* Build configuration list for PBXNativeTarget "AELog OSX Tests" */ = {
 			isa = XCConfigurationList;
@@ -898,6 +900,7 @@
 				8B04F58C1CB00B420002F869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B58945F1CA89F27005F0B9D /* Build configuration list for PBXProject "AELog" */ = {
 			isa = XCConfigurationList;

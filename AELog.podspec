@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'AELog'
-    s.version = '0.2.1'
+    s.version = '0.2.2'
     s.summary = 'Simple, lightweight and flexible debug logging framework written in Swift'
 
     s.homepage = 'https://github.com/tadija/AELog'
