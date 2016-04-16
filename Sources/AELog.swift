@@ -132,7 +132,8 @@ public struct AELogLine: CustomStringConvertible {
     /// Concatenated text representation of a complete log line
     public var description: String {
         let date = AELog.sharedInstance.settings.dateFormatter.stringFromDate(self.date)
-        let thread = self.thread.isMainThread ? "Main" : (self.thread.name ?? "Unknown")
+        let threadName = (self.thread.name ?? "Unknown").isEmpty ? "Unknown" : self.thread.name!
+        let thread = self.thread.isMainThread ? "Main" : threadName
         let desc = parse(date: date, thread: thread, file: file, line: line, function: function, message: message)
         return desc
     }
