@@ -60,12 +60,18 @@ public class AELog {
     }
     
     private func log(thread thread: NSThread, path: String, line: Int, function: String, message: String) {
-        if settings.enabled {
-            let file = fileNameForPath(path)
-            if fileEnabled(file) {
-                let logLine = AELogLine(thread: thread, file: file, line: line, function: function, message: message)
-                print(logLine.description)
-                delegate?.didLog(logLine)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) { [unowned self] in
+            if self.settings.enabled {
+                let file = self.fileNameForPath(path)
+                if self.fileEnabled(file) {
+                    
+                    let logLine = AELogLine(thread: thread, file: file, line: line, function: function, message: message)
+                    print(logLine.description)
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.delegate?.didLog(logLine)
+                    })
+                }
             }
         }
     }
