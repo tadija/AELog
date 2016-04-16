@@ -28,8 +28,13 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func didTapButton() {
-        aelog()
-        generateLogLines(count: Int.random(max: 218))
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+        dispatch_async(queue) {
+            generateLogLines(count: Int.random(max: 1000))
+            dispatch_async(dispatch_get_main_queue(), {
+                aelog()
+            })
+        }
     }
     
 }
