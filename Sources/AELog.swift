@@ -38,7 +38,7 @@ import Foundation
 */
 public func aelog(_ message: Any = "", path: String = #file, line: Int = #line, function: String = #function) {
     let thread = Thread.current
-    AELog.sharedInstance.log(thread: thread, path: path, line: line, function: function, message: "\(message)")
+    AELog.shared.log(thread: thread, path: path, line: line, function: function, message: "\(message)")
 }
 
 // MARK: - AELog
@@ -48,8 +48,8 @@ open class AELog {
     
     // MARK: Properties
     
-    fileprivate static let sharedInstance = AELog()
-    fileprivate let settings = AELogSettings()
+    static let shared = AELog()
+    let settings = AELogSettings()
     fileprivate weak var delegate: AELogDelegate?
     fileprivate let logQueue = DispatchQueue(label: "AELog", attributes: [])
     
@@ -57,10 +57,10 @@ open class AELog {
 
     /// Configures delegate for `AELog` singleton. Use this if you need additional functionality after each line of log.
     open class func launchWithDelegate(_ delegate: AELogDelegate) {
-        AELog.sharedInstance.delegate = delegate
+        AELog.shared.delegate = delegate
     }
     
-    fileprivate func log(thread: Thread, path: String, line: Int, function: String, message: String) {
+    func log(thread: Thread, path: String, line: Int, function: String, message: String) {
         logQueue.async { [unowned self] in
             if self.settings.enabled {
                 let file = self.fileNameForPath(path)
@@ -79,14 +79,14 @@ open class AELog {
     
     // MARK: Helpers
     
-    fileprivate func fileNameForPath(_ path: String) -> String {
+    private func fileNameForPath(_ path: String) -> String {
         guard let
             fileName = NSURL(fileURLWithPath: path).deletingPathExtension?.lastPathComponent
         else { return "Unknown" }
         return fileName
     }
     
-    fileprivate func fileEnabled(_ fileName: String) -> Bool {
+    private func fileEnabled(_ fileName: String) -> Bool {
         guard let
             files = settings.files,
             let fileEnabled = files[fileName]
@@ -101,157 +101,4 @@ open class AELog {
 /// Forwards logged lines via `didLog:` function.
 public protocol AELogDelegate: class {
     func didLog(_ logLine: AELogLine)
-}
-
-// MARK: - AELogLine
-
-/// Custom data structure used by `AELog` for log lines.
-public struct AELogLine: CustomStringConvertible {
-    
-    // MARK: Properties
-    
-    /// Timestamp
-    public let date: Date
-    /// Thread
-    public let thread: Thread
-    /// Filename (without extension)
-    public let file: String
-    /// Line of code
-    public let line: Int
-    /// Function
-    public let function: String
-    /// Custom message
-    public let message: String
-    
-    fileprivate var threadName: String {
-        if thread.isMainThread {
-            return "Main"
-        } else if let name = thread.name, !name.isEmpty {
-            return name
-        } else {
-            return String(format:"%p", thread)
-        }
-    }
-    
-    // MARK: Init
-    
-    fileprivate init(thread: Thread, file: String, line: Int, function: String, message: String) {
-        self.date = Date()
-        self.thread = thread
-        self.file = file
-        self.line = line
-        self.function = function
-        self.message = message
-    }
-    
-    // MARK: - CustomStringConvertible
-    
-    /// Concatenated text representation of a complete log line
-    public var description: String {
-        let date = AELog.sharedInstance.settings.dateFormatter.string(from: self.date)
-        let desc = parse(date: date, thread: threadName, file: file, line: line, function: function, message: message)
-        return desc
-    }
-    
-    fileprivate func parse(
-        date: String, thread: String, file: String, line: Int, function: String, message: String) -> String {
-        let result = AELog.sharedInstance.settings.template
-            .replacingOccurrences(of: "{date}", with: date)
-            .replacingOccurrences(of: "{thread}", with: thread)
-            .replacingOccurrences(of: "{file}", with: file)
-            .replacingOccurrences(of: "{line}", with: "\(line)")
-            .replacingOccurrences(of: "{function}", with: function)
-            .replacingOccurrences(of: "{message}", with: message)
-        return result
-    }
-    
-}
-
-// MARK: - AELogSettings
-
-/**
-    Helper for accessing settings from the external file.
- 
-    Create `AELog.plist` dictionary file and add it to your target.
- 
-    There is `Key` struct which contains possible keys for all settings.
-*/
-open class AELogSettings {
-    
-    // MARK: Constants
-    
-    /// Setting keys which can be used in `AELog.plist` dictionary.
-    public struct Key {
-        /// Boolean - Logging enabled flag (defaults to `YES`)
-        public static let Enabled = "Enabled"
-        
-        /// Dictionary - Key: file name without extension, Value: Boolean (defaults to empty - all files log enabled)
-        public static let Files = "Files"
-        
-        /// String - Date format which will be used in log lines. (defaults to "yyyy-MM-dd HH:mm:ss.SSS")
-        public static let DateFormat = "DateFormat"
-        
-        /// String - Log lines template. (defaults to "{date} -- [{thread}] {file} ({line}) -> {function} > {message}")
-        public static let Template = "Template"
-    }
-    
-    fileprivate struct Default {
-        fileprivate static let Enabled = true
-        fileprivate static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        fileprivate static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
-    }
-    
-    // MARK: Properties
-    
-    fileprivate let dateFormatter = DateFormatter()
-    
-    /// Contents of `AELog.plist` file
-    open fileprivate(set) lazy var plist: [String : AnyObject]? = {
-        guard let
-            path = Bundle.main.path(forResource: "AELog", ofType: "plist"),
-            let settings = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
-        else { return nil }
-        return settings
-    }()
-    
-    // MARK: Init
-    
-    public init() {
-        dateFormatter.dateFormat = dateFormat
-    }
-    
-    // MARK: Settings
-    
-    fileprivate lazy var enabled: Bool = { [unowned self] in
-        guard let
-            settings = self.plist,
-            let enabled = settings[Key.Enabled] as? Bool
-        else { return Default.Enabled }
-        return enabled
-    }()
-    
-    fileprivate lazy var files: [String : Bool]? = { [unowned self] in
-        guard let
-            settings = self.plist,
-            let files = settings[Key.Files] as? [String : Bool]
-        else { return nil }
-        return files
-    }()
-    
-    fileprivate lazy var dateFormat: String? = { [unowned self] in
-        guard let
-            settings = self.plist,
-            let format = settings[Key.DateFormat] as? String
-        else { return Default.DateFormat }
-        return format
-    }()
-    
-    fileprivate lazy var template: String = { [unowned self] in
-        guard let
-            settings = self.plist,
-            let template = settings[Key.Template] as? String
-        else { return Default.Template }
-        return template
-    }()
-    
 }
