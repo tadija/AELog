@@ -16,21 +16,21 @@ class ViewController: UIViewController {
         aelog()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         aelog()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         aelog()
     }
     
-    @IBAction func didTapButton(sender: UIButton) {
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-        dispatch_async(queue) {
+    @IBAction func didTapButton(_ sender: UIButton) {
+        let queue = DispatchQueue.global()
+        queue.async {
             generateLogLines(count: Int.random(max: 1000))
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 aelog(sender)
             })
         }

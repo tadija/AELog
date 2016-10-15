@@ -8,7 +8,7 @@
 
 import AELog
 
-func generateLogLines(count count: Int) {
+func generateLogLines(count: Int) {
     for i in 0...count {
         aelog("I'm just a log line #\(i).")
     }
