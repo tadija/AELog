@@ -37,7 +37,7 @@ public class Settings {
     
     /// Setting keys which can be used in `AELog.plist` dictionary.
     public struct Key {
-        /// Boolean - Logging enabled flag (defaults to `YES`)
+        /// Boolean - Logging enabled flag (defaults to `NO`)
         public static let Enabled = "Enabled"
         
         /// Dictionary - Key: file name without extension, Value: Boolean (defaults to empty - all files log enabled)
@@ -51,7 +51,7 @@ public class Settings {
     }
     
     private struct Default {
-        static let Enabled = true
+        static let Enabled = false
         static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
     }
@@ -60,11 +60,17 @@ public class Settings {
     
     let dateFormatter = DateFormatter()
     
-    /// Contents of `AELog.plist` file
+    /// Contents of AELog settings (AELog.plist file or AELog dictionary from Info.plist)
     open private(set) lazy var plist: [String : AnyObject]? = {
         guard let
             path = Bundle.main.path(forResource: "AELog", ofType: "plist"),
             let settings = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
+        else { return self.infoPlist }
+        return settings
+    }()
+    
+    open private(set) lazy var infoPlist: [String : AnyObject]? = {
+        guard let settings = Bundle.main.infoDictionary?["AELog"] as? [String : AnyObject]
         else { return nil }
         return settings
     }()
