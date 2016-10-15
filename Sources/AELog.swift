@@ -36,32 +36,32 @@ import Foundation
  
     - parameter message: Custom text which will be added at the end of a log line
 */
-public func aelog(message: Any = "", path: String = #file, line: Int = #line, function: String = #function) {
-    let thread = NSThread.currentThread()
+public func aelog(_ message: Any = "", path: String = #file, line: Int = #line, function: String = #function) {
+    let thread = Thread.current
     AELog.sharedInstance.log(thread: thread, path: path, line: line, function: function, message: "\(message)")
 }
 
 // MARK: - AELog
 
 /// Handles logging called from `aelog` top-level function.
-public class AELog {
+open class AELog {
     
     // MARK: Properties
     
-    private static let sharedInstance = AELog()
-    private let settings = AELogSettings()
-    private weak var delegate: AELogDelegate?
-    private let logQueue = dispatch_queue_create("AELog", nil)
+    fileprivate static let sharedInstance = AELog()
+    fileprivate let settings = AELogSettings()
+    fileprivate weak var delegate: AELogDelegate?
+    fileprivate let logQueue = DispatchQueue(label: "AELog", attributes: [])
     
     // MARK: API
 
     /// Configures delegate for `AELog` singleton. Use this if you need additional functionality after each line of log.
-    public class func launchWithDelegate(delegate: AELogDelegate) {
+    open class func launchWithDelegate(_ delegate: AELogDelegate) {
         AELog.sharedInstance.delegate = delegate
     }
     
-    private func log(thread thread: NSThread, path: String, line: Int, function: String, message: String) {
-        dispatch_async(logQueue) { [unowned self] in
+    fileprivate func log(thread: Thread, path: String, line: Int, function: String, message: String) {
+        logQueue.async { [unowned self] in
             if self.settings.enabled {
                 let file = self.fileNameForPath(path)
                 if self.fileEnabled(file) {
@@ -69,7 +69,7 @@ public class AELog {
                     let logLine = AELogLine(thread: thread, file: file, line: line, function: function, message: message)
                     print(logLine.description)
                     
-                    dispatch_async(dispatch_get_main_queue(), {
+                    DispatchQueue.main.async(execute: {
                         self.delegate?.didLog(logLine)
                     })
                 }
@@ -79,17 +79,17 @@ public class AELog {
     
     // MARK: Helpers
     
-    private func fileNameForPath(path: String) -> String {
+    fileprivate func fileNameForPath(_ path: String) -> String {
         guard let
-            fileName = NSURL(fileURLWithPath: path).URLByDeletingPathExtension?.lastPathComponent
+            fileName = NSURL(fileURLWithPath: path).deletingPathExtension?.lastPathComponent
         else { return "Unknown" }
         return fileName
     }
     
-    private func fileEnabled(fileName: String) -> Bool {
+    fileprivate func fileEnabled(_ fileName: String) -> Bool {
         guard let
             files = settings.files,
-            fileEnabled = files[fileName]
+            let fileEnabled = files[fileName]
         else { return true }
         return fileEnabled
     }
@@ -100,7 +100,7 @@ public class AELog {
 
 /// Forwards logged lines via `didLog:` function.
 public protocol AELogDelegate: class {
-    func didLog(logLine: AELogLine)
+    func didLog(_ logLine: AELogLine)
 }
 
 // MARK: - AELogLine
@@ -111,9 +111,9 @@ public struct AELogLine: CustomStringConvertible {
     // MARK: Properties
     
     /// Timestamp
-    public let date: NSDate
+    public let date: Date
     /// Thread
-    public let thread: NSThread
+    public let thread: Thread
     /// Filename (without extension)
     public let file: String
     /// Line of code
@@ -123,10 +123,10 @@ public struct AELogLine: CustomStringConvertible {
     /// Custom message
     public let message: String
     
-    private var threadName: String {
+    fileprivate var threadName: String {
         if thread.isMainThread {
             return "Main"
-        } else if let name = thread.name where !name.isEmpty {
+        } else if let name = thread.name, !name.isEmpty {
             return name
         } else {
             return String(format:"%p", thread)
@@ -135,8 +135,8 @@ public struct AELogLine: CustomStringConvertible {
     
     // MARK: Init
     
-    private init(thread: NSThread, file: String, line: Int, function: String, message: String) {
-        self.date = NSDate()
+    fileprivate init(thread: Thread, file: String, line: Int, function: String, message: String) {
+        self.date = Date()
         self.thread = thread
         self.file = file
         self.line = line
@@ -148,20 +148,20 @@ public struct AELogLine: CustomStringConvertible {
     
     /// Concatenated text representation of a complete log line
     public var description: String {
-        let date = AELog.sharedInstance.settings.dateFormatter.stringFromDate(self.date)
+        let date = AELog.sharedInstance.settings.dateFormatter.string(from: self.date)
         let desc = parse(date: date, thread: threadName, file: file, line: line, function: function, message: message)
         return desc
     }
     
-    private func parse(
-        date date: String, thread: String, file: String, line: Int, function: String, message: String) -> String {
+    fileprivate func parse(
+        date: String, thread: String, file: String, line: Int, function: String, message: String) -> String {
         let result = AELog.sharedInstance.settings.template
-            .stringByReplacingOccurrencesOfString("{date}", withString: date)
-            .stringByReplacingOccurrencesOfString("{thread}", withString: thread)
-            .stringByReplacingOccurrencesOfString("{file}", withString: file)
-            .stringByReplacingOccurrencesOfString("{line}", withString: "\(line)")
-            .stringByReplacingOccurrencesOfString("{function}", withString: function)
-            .stringByReplacingOccurrencesOfString("{message}", withString: message)
+            .replacingOccurrences(of: "{date}", with: date)
+            .replacingOccurrences(of: "{thread}", with: thread)
+            .replacingOccurrences(of: "{file}", with: file)
+            .replacingOccurrences(of: "{line}", with: "\(line)")
+            .replacingOccurrences(of: "{function}", with: function)
+            .replacingOccurrences(of: "{message}", with: message)
         return result
     }
     
@@ -176,7 +176,7 @@ public struct AELogLine: CustomStringConvertible {
  
     There is `Key` struct which contains possible keys for all settings.
 */
-public class AELogSettings {
+open class AELogSettings {
     
     // MARK: Constants
     
@@ -195,21 +195,21 @@ public class AELogSettings {
         public static let Template = "Template"
     }
     
-    private struct Default {
-        private static let Enabled = true
-        private static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        private static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+    fileprivate struct Default {
+        fileprivate static let Enabled = true
+        fileprivate static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        fileprivate static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
     }
     
     // MARK: Properties
     
-    private let dateFormatter = NSDateFormatter()
+    fileprivate let dateFormatter = DateFormatter()
     
     /// Contents of `AELog.plist` file
-    public private(set) lazy var plist: [String : AnyObject]? = {
+    open fileprivate(set) lazy var plist: [String : AnyObject]? = {
         guard let
-            path = NSBundle.mainBundle().pathForResource("AELog", ofType: "plist"),
-            settings = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
+            path = Bundle.main.path(forResource: "AELog", ofType: "plist"),
+            let settings = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
         else { return nil }
         return settings
     }()
@@ -222,34 +222,34 @@ public class AELogSettings {
     
     // MARK: Settings
     
-    private lazy var enabled: Bool = { [unowned self] in
+    fileprivate lazy var enabled: Bool = { [unowned self] in
         guard let
             settings = self.plist,
-            enabled = settings[Key.Enabled] as? Bool
+            let enabled = settings[Key.Enabled] as? Bool
         else { return Default.Enabled }
         return enabled
     }()
     
-    private lazy var files: [String : Bool]? = { [unowned self] in
+    fileprivate lazy var files: [String : Bool]? = { [unowned self] in
         guard let
             settings = self.plist,
-            files = settings[Key.Files] as? [String : Bool]
+            let files = settings[Key.Files] as? [String : Bool]
         else { return nil }
         return files
     }()
     
-    private lazy var dateFormat: String? = { [unowned self] in
+    fileprivate lazy var dateFormat: String? = { [unowned self] in
         guard let
             settings = self.plist,
-            format = settings[Key.DateFormat] as? String
+            let format = settings[Key.DateFormat] as? String
         else { return Default.DateFormat }
         return format
     }()
     
-    private lazy var template: String = { [unowned self] in
+    fileprivate lazy var template: String = { [unowned self] in
         guard let
             settings = self.plist,
-            template = settings[Key.Template] as? String
+            let template = settings[Key.Template] as? String
         else { return Default.Template }
         return template
     }()

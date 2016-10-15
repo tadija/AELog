@@ -27,7 +27,7 @@ import XCTest
 
 class AELogTests: XCTestCase, AELogDelegate {
     
-    private var timestamp = NSDate()
+    fileprivate var timestamp = Date()
     
     override func setUp() {
         super.setUp()
@@ -39,19 +39,19 @@ class AELogTests: XCTestCase, AELogDelegate {
     }
     
     func testLogPerformance() {
-        self.measureBlock {
+        self.measure {
             aelog("test message")
         }
     }
     
-    func didLog(logLine: AELogLine) {
+    func didLog(_ logLine: AELogLine) {
         timestamp = logLine.date
         testLogLine(logLine)
     }
     
-    func testLogLine(logLine: AELogLine) {
+    func testLogLine(_ logLine: AELogLine) {
         XCTAssertEqual(timestamp, logLine.date)
-        XCTAssertEqual(NSThread.mainThread(), logLine.thread)
+        XCTAssertEqual(Thread.main, logLine.thread)
         XCTAssertEqual("AELogTests", logLine.file)
         XCTAssertEqual(43, logLine.line)
         XCTAssertEqual("testLogPerformance()", logLine.function)
