@@ -16,17 +16,17 @@ class ViewController: NSViewController {
         aelog()
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
             aelog()
         }
     }
 
-    @IBAction func didTapButton(sender: NSButtonCell) {
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-        dispatch_async(queue) {
+    @IBAction func didTapButton(_ sender: NSButtonCell) {
+        let queue = DispatchQueue.global()
+        queue.async {
             generateLogLines(count: Int.random(max: 1000))
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 aelog(sender)
             })
         }

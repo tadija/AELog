@@ -12,8 +12,8 @@ import AELog
 
 class InterfaceController: WKInterfaceController {
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         aelog()
     }
 
@@ -28,10 +28,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func didTapButton() {
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-        dispatch_async(queue) {
+        let queue = DispatchQueue.global()
+        queue.async {
             generateLogLines(count: Int.random(max: 1000))
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 aelog()
             })
         }

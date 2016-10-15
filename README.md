@@ -1,7 +1,7 @@
 # AELog
 **Simple, lightweight and flexible debug logging framework written in Swift**
 
-[![Language Swift 2.2](https://img.shields.io/badge/Language-Swift%202.2-orange.svg?style=flat)](https://swift.org)
+[![Language Swift 3.0](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
 [![Platforms iOS | watchOS | tvOS | OSX](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20OS%20X-lightgray.svg?style=flat)](http://www.apple.com)
 [![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat)](https://github.com/tadija/AELog/blob/master/LICENSE)
 
@@ -26,7 +26,7 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 - **Top level logging** which can be disabled when needed
 - Enable or disable logging **on a file level**
 - **Customizable format and verbosity** of log lines
-- Covered with **unit tests**
+- Covered with [unit tests](https://github.com/tadija/AELog/blob/master/Tests/AELogTests.swift)
 - Covered with [docs](http://cocoadocs.org/docsets/AELog)
 
 ## Usage
@@ -45,12 +45,12 @@ For example, if you added this on line 21 in `viewDidLoad` of your `ViewControll
 
 Ok, now for the pro-users which might want to disable logging when going live, choose between files that are making the output and ones that don't, or maybe customize format and verbosity of the log lines, this is how you can **configure AELog**:
 
-1. Create `AELog.plist` file and add it to your target (you can also drag one from the **AELogDemo** example project).
-2. Configure any possible settings the way you want:
+1. Create **AELog.plist** file and add it to your target or create dictionary with name **AELog** in your existing **Info.plist** file.
+2. Configure any setting the way you want (*don't forget to at least set Enable to YES in order to make it work*):
 
 	Key | Type | Description
 	------------ | ------------- | -------------
-	Enabled | Boolean | Logging enabled flag. (defaults to `YES`)
+	Enabled | Boolean | Logging enabled flag. (defaults to `NO`)
 	Files | Dictionary | Key: file name, Value: Boolean (defaults to empty - all files log enabled)
 	DateFormat | String | Date format which will be used in log lines. (defaults to `yyyy-MM-dd HH:mm:ss.SSS`)
 	Template | String | Log lines template. (defaults to `{date} -- [{thread}] {file} ({line}) -> {function} > {message}`)
@@ -59,29 +59,31 @@ That's all there is. You're the master of `AELog` now. Happy coding!
 
 ### One more thing
 
-Have you ever wanted to see the output of your app while you're not at your computer, like in real time directly on your iOS device? Yeah, me neither, but just in case you change your mind (I did), check out [AEConsole](https://github.com/tadija/AEConsole) - **customizable console UI overlay with debug log on top of your iOS app**. After all, `AELog` was made just to complement `AEConsole`. :)
+Have you ever wanted to see the output of your app while you're not at your computer, like in real time directly on your iOS device? Yeah, me neither, but just in case you change your mind (like I did), check out [AEConsole](https://github.com/tadija/AEConsole) - **customizable console UI overlay with debug log on top of your iOS app**. After all, `AELog` was made just to complement `AEConsole`. :)
 	
 ## Requirements
-- Xcode 7.3+
-- iOS 8.0 | watchOS 2.0 | tvOS 9.0 | OSX 10.10
+- Xcode 8.0+
+- AELog doesn't require any additional libraries for it to work.
 
 ## Installation
 
-- [CocoaPods](http://cocoapods.org/):
+- [Swift Package Manager](https://swift.org/package-manager/):
 
-	```ruby
-	pod 'AELog'
-	```
-  
+    ```
+    .Package(url: "https://github.com/tadija/AELog.git", majorVersion: 0)
+    ```
+
 - [Carthage](https://github.com/Carthage/Carthage):
 
 	```ogdl
 	github "tadija/AELog"
 	```
 
-- Manually:
+- [CocoaPods](http://cocoapods.org/):
 
-  Just drag **AELog.swift** into your project and start using it.
+	```ruby
+	pod 'AELog'
+	```
 
 ## License
 AELog is released under the MIT license. See [LICENSE](LICENSE) for details.

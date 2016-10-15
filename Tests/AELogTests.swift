@@ -27,11 +27,11 @@ import XCTest
 
 class AELogTests: XCTestCase, AELogDelegate {
     
-    private var timestamp = NSDate()
+    fileprivate var timestamp = Date()
     
     override func setUp() {
         super.setUp()
-        AELog.launchWithDelegate(self)
+        AELog.launch(with: self)
     }
     
     override func tearDown() {
@@ -39,23 +39,23 @@ class AELogTests: XCTestCase, AELogDelegate {
     }
     
     func testLogPerformance() {
-        self.measureBlock {
+        self.measure {
             aelog("test message")
         }
     }
     
-    func didLog(logLine: AELogLine) {
-        timestamp = logLine.date
-        testLogLine(logLine)
+    func didLog(_ line: Line) {
+        timestamp = line.date
+        testLogLine(line)
     }
     
-    func testLogLine(logLine: AELogLine) {
-        XCTAssertEqual(timestamp, logLine.date)
-        XCTAssertEqual(NSThread.mainThread(), logLine.thread)
-        XCTAssertEqual("AELogTests", logLine.file)
-        XCTAssertEqual(43, logLine.line)
-        XCTAssertEqual("testLogPerformance()", logLine.function)
-        XCTAssertEqual("test message", logLine.message)
+    func testLogLine(_ line: Line) {
+        XCTAssertEqual(timestamp, line.date)
+        XCTAssertEqual(Thread.main, line.thread)
+        XCTAssertEqual("AELogTests", line.file)
+        XCTAssertEqual(43, line.number)
+        XCTAssertEqual("testLogPerformance()", line.function)
+        XCTAssertEqual("test message", line.message)
     }
     
 }

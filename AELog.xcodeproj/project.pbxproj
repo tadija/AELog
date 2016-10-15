@@ -21,6 +21,14 @@
 		8B8464E71CAB4B480027AA52 /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B8464F51CAB4BA20027AA52 /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
 		8B8464F61CAB4BA40027AA52 /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BDEC8B21DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
+		8BDEC8B31DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
+		8BDEC8B41DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
+		8BDEC8B61DB264C10074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
+		8BDEC8B71DB264C10074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
+		8BDEC8B81DB264C10074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
+		8BDEC8C31DB2763A0074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
+		8BDEC8C41DB2763D0074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +70,8 @@
 		8B8464CE1CAB492D0027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8464DE1CAB4B310027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8464ED1CAB4B870027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDEC8B11DB264B60074994A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		8BDEC8B51DB264C10074994A /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8BE817A91CAF42C500FCBE4A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8BE817AA1CAF42C500FCBE4A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -180,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				8B5894701CA89F6C005F0B9D /* AELog.swift */,
+				8BDEC8B11DB264B60074994A /* Line.swift */,
+				8BDEC8B51DB264C10074994A /* Settings.swift */,
 				8B5894721CA89F78005F0B9D /* Supporting Files */,
 			);
 			path = Sources;
@@ -365,29 +377,35 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = AE;
 				TargetAttributes = {
 					8B04F5621CB009DD0002F869 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					8B04F5711CB00AA60002F869 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 					8B04F5811CB00B420002F869 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					8B5894641CA89F27005F0B9D = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					8B8464CD1CAB492D0027AA52 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					8B8464DD1CAB4B310027AA52 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 					8B8464EC1CAB4B870027AA52 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -495,7 +513,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDEC8B61DB264C10074994A /* Settings.swift in Sources */,
 				8B5894711CA89F6C005F0B9D /* AELog.swift in Sources */,
+				8BDEC8B21DB264B60074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +523,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDEC8C41DB2763D0074994A /* Settings.swift in Sources */,
 				8B8464D61CAB4AED0027AA52 /* AELog.swift in Sources */,
+				8BDEC8C31DB2763A0074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +533,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDEC8B71DB264C10074994A /* Settings.swift in Sources */,
 				8B8464E61CAB4B400027AA52 /* AELog.swift in Sources */,
+				8BDEC8B31DB264B60074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +543,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDEC8B81DB264C10074994A /* Settings.swift in Sources */,
 				8B8464F51CAB4BA20027AA52 /* AELog.swift in Sources */,
+				8BDEC8B41DB264B60074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +578,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -563,6 +590,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -601,6 +629,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-OSX-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -615,6 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELog-OSX-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -632,8 +662,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -682,8 +714,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -704,6 +738,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -716,6 +751,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -727,6 +763,7 @@
 				PRODUCT_NAME = AELog;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -735,6 +772,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -745,6 +783,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -752,7 +791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -767,6 +806,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -774,7 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -789,6 +829,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -796,6 +837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -807,6 +849,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -816,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -827,6 +871,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -836,6 +881,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -847,6 +893,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -856,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -867,6 +915,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
