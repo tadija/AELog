@@ -31,7 +31,7 @@ class AELogTests: XCTestCase, AELogDelegate {
     
     override func setUp() {
         super.setUp()
-        AELog.launchWithDelegate(self)
+        AELog.launch(with: self)
     }
     
     override func tearDown() {
@@ -44,18 +44,18 @@ class AELogTests: XCTestCase, AELogDelegate {
         }
     }
     
-    func didLog(_ logLine: AELogLine) {
-        timestamp = logLine.date
-        testLogLine(logLine)
+    func didLog(_ line: Line) {
+        timestamp = line.date
+        testLogLine(line)
     }
     
-    func testLogLine(_ logLine: AELogLine) {
-        XCTAssertEqual(timestamp, logLine.date)
-        XCTAssertEqual(Thread.main, logLine.thread)
-        XCTAssertEqual("AELogTests", logLine.file)
-        XCTAssertEqual(43, logLine.line)
-        XCTAssertEqual("testLogPerformance()", logLine.function)
-        XCTAssertEqual("test message", logLine.message)
+    func testLogLine(_ line: Line) {
+        XCTAssertEqual(timestamp, line.date)
+        XCTAssertEqual(Thread.main, line.thread)
+        XCTAssertEqual("AELogTests", line.file)
+        XCTAssertEqual(43, line.number)
+        XCTAssertEqual("testLogPerformance()", line.function)
+        XCTAssertEqual("test message", line.message)
     }
     
 }

@@ -36,9 +36,9 @@ import Foundation
  
     - parameter message: Custom text which will be added at the end of a log line
 */
-public func aelog(_ message: Any = "", path: String = #file, line: Int = #line, function: String = #function) {
+public func aelog(_ message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
     let thread = Thread.current
-    AELog.shared.log(thread: thread, path: path, line: line, function: function, message: "\(message)")
+    AELog.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }
 
 // MARK: - AELog
@@ -49,28 +49,30 @@ open class AELog {
     // MARK: Properties
     
     static let shared = AELog()
-    let settings = AELogSettings()
-    fileprivate weak var delegate: AELogDelegate?
-    fileprivate let logQueue = DispatchQueue(label: "AELog", attributes: [])
+    
+    weak var delegate: AELogDelegate?
+    
+    let settings = Settings()
+    let queue = DispatchQueue(label: "AELog", attributes: [])
     
     // MARK: API
 
     /// Configures delegate for `AELog` singleton. Use this if you need additional functionality after each line of log.
-    open class func launchWithDelegate(_ delegate: AELogDelegate) {
+    open class func launch(with delegate: AELogDelegate) {
         AELog.shared.delegate = delegate
     }
     
-    func log(thread: Thread, path: String, line: Int, function: String, message: String) {
-        logQueue.async { [unowned self] in
-            if self.settings.enabled {
-                let file = self.fileNameForPath(path)
-                if self.fileEnabled(file) {
+    func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
+        queue.async { [unowned self] in
+            if self.settings.isEnabled {
+                let fileName = self.getFileName(for: path)
+                if self.isLogEnabledForFileWithName(fileName) {
                     
-                    let logLine = AELogLine(thread: thread, file: file, line: line, function: function, message: message)
-                    print(logLine.description)
+                    let line = Line(thread: thread, file: fileName, number: lineNumber, function: function, message: message)
+                    print(line.description)
                     
                     DispatchQueue.main.async(execute: {
-                        self.delegate?.didLog(logLine)
+                        self.delegate?.didLog(line)
                     })
                 }
             }
@@ -79,14 +81,14 @@ open class AELog {
     
     // MARK: Helpers
     
-    private func fileNameForPath(_ path: String) -> String {
+    private func getFileName(for path: String) -> String {
         guard let
             fileName = NSURL(fileURLWithPath: path).deletingPathExtension?.lastPathComponent
         else { return "Unknown" }
         return fileName
     }
     
-    private func fileEnabled(_ fileName: String) -> Bool {
+    private func isLogEnabledForFileWithName(_ fileName: String) -> Bool {
         guard let
             files = settings.files,
             let fileEnabled = files[fileName]
@@ -100,5 +102,7 @@ open class AELog {
 
 /// Forwards logged lines via `didLog:` function.
 public protocol AELogDelegate: class {
-    func didLog(_ logLine: AELogLine)
+    
+    func didLog(_ line: Line)
+    
 }

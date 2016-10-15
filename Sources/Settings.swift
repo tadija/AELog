@@ -24,8 +24,6 @@
 
 import Foundation
 
-// MARK: - AELogSettings
-
 /**
     Helper for accessing settings from the external file.
 
@@ -33,7 +31,7 @@ import Foundation
 
     There is `Key` struct which contains possible keys for all settings.
 */
-open class AELogSettings {
+public class Settings {
     
     // MARK: Constants
     
@@ -52,10 +50,10 @@ open class AELogSettings {
         public static let Template = "Template"
     }
     
-    fileprivate struct Default {
-        fileprivate static let Enabled = true
-        fileprivate static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        fileprivate static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+    private struct Default {
+        static let Enabled = true
+        static let DateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
     }
     
     // MARK: Properties
@@ -63,11 +61,11 @@ open class AELogSettings {
     let dateFormatter = DateFormatter()
     
     /// Contents of `AELog.plist` file
-    open fileprivate(set) lazy var plist: [String : AnyObject]? = {
+    open private(set) lazy var plist: [String : AnyObject]? = {
         guard let
             path = Bundle.main.path(forResource: "AELog", ofType: "plist"),
             let settings = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
-            else { return nil }
+        else { return nil }
         return settings
     }()
     
@@ -79,36 +77,36 @@ open class AELogSettings {
     
     // MARK: Settings
     
-    lazy var enabled: Bool = { [unowned self] in
+    lazy var isEnabled: Bool = { [unowned self] in
         guard let
             settings = self.plist,
             let enabled = settings[Key.Enabled] as? Bool
-            else { return Default.Enabled }
+        else { return Default.Enabled }
         return enabled
-        }()
+    }()
     
     lazy var files: [String : Bool]? = { [unowned self] in
         guard let
             settings = self.plist,
             let files = settings[Key.Files] as? [String : Bool]
-            else { return nil }
+        else { return nil }
         return files
-        }()
+    }()
     
-    fileprivate lazy var dateFormat: String? = { [unowned self] in
+    lazy var dateFormat: String? = { [unowned self] in
         guard let
             settings = self.plist,
             let format = settings[Key.DateFormat] as? String
-            else { return Default.DateFormat }
+        else { return Default.DateFormat }
         return format
-        }()
+    }()
     
     lazy var template: String = { [unowned self] in
         guard let
             settings = self.plist,
             let template = settings[Key.Template] as? String
-            else { return Default.Template }
+        else { return Default.Template }
         return template
-        }()
+    }()
     
 }

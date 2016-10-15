@@ -24,27 +24,30 @@
 
 import Foundation
 
-// MARK: - AELogLine
-
 /// Custom data structure used by `AELog` for log lines.
-public struct AELogLine: CustomStringConvertible {
+public struct Line: CustomStringConvertible {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     /// Timestamp
     public let date: Date
+    
     /// Thread
     public let thread: Thread
+    
     /// Filename (without extension)
     public let file: String
-    /// Line of code
-    public let line: Int
+    
+    /// Line number in code
+    public let number: Int
+    
     /// Function
     public let function: String
+    
     /// Custom message
     public let message: String
     
-    fileprivate var threadName: String {
+    private var threadName: String {
         if thread.isMainThread {
             return "Main"
         } else if let name = thread.name, !name.isEmpty {
@@ -54,13 +57,13 @@ public struct AELogLine: CustomStringConvertible {
         }
     }
     
-    // MARK: Init
+    // MARK: - Init
     
-    init(thread: Thread, file: String, line: Int, function: String, message: String) {
+    init(thread: Thread, file: String, number: Int, function: String, message: String) {
         self.date = Date()
         self.thread = thread
         self.file = file
-        self.line = line
+        self.number = number
         self.function = function
         self.message = message
     }
@@ -70,17 +73,18 @@ public struct AELogLine: CustomStringConvertible {
     /// Concatenated text representation of a complete log line
     public var description: String {
         let date = AELog.shared.settings.dateFormatter.string(from: self.date)
-        let desc = parse(date: date, thread: threadName, file: file, line: line, function: function, message: message)
+        let desc = parse(date: date, thread: threadName, file: file, number: number, function: function, message: message)
         return desc
     }
     
-    fileprivate func parse(
-        date: String, thread: String, file: String, line: Int, function: String, message: String) -> String {
+    private func parse(
+        date: String, thread: String, file: String, number: Int, function: String, message: String) -> String {
+        
         let result = AELog.shared.settings.template
             .replacingOccurrences(of: "{date}", with: date)
             .replacingOccurrences(of: "{thread}", with: thread)
             .replacingOccurrences(of: "{file}", with: file)
-            .replacingOccurrences(of: "{line}", with: "\(line)")
+            .replacingOccurrences(of: "{line}", with: "\(number)")
             .replacingOccurrences(of: "{function}", with: function)
             .replacingOccurrences(of: "{message}", with: message)
         return result
