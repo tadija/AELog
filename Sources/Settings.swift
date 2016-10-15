@@ -31,7 +31,7 @@ import Foundation
 
     There is `Key` struct which contains possible keys for all settings.
 */
-public class Settings {
+open class Settings {
     
     // MARK: Constants
     
