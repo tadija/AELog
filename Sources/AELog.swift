@@ -57,7 +57,7 @@ open class AELog {
     
     // MARK: API
 
-    /// Configures delegate for `AELog` singleton. Use this if you need additional functionality after each line of log.
+    /// Configures delegate for `AELog` singleton. Use it if you need additional functionality after each line of log.
     open class func launch(with delegate: AELogDelegate) {
         AELog.shared.delegate = delegate
     }
@@ -66,9 +66,14 @@ open class AELog {
         queue.async { [unowned self] in
             if self.config.isEnabled {
                 let fileName = self.getFileName(for: path)
-                if self.isLogEnabledForFileWithName(fileName) {
+                if self.isLogEnabledForFile(with: fileName) {
                     
-                    let line = Line(thread: thread, file: fileName, number: lineNumber, function: function, message: message)
+                    let line = Line(thread: thread,
+                                    file: fileName,
+                                    number: lineNumber,
+                                    function: function,
+                                    message: message)
+                    
                     print(line.description)
                     
                     DispatchQueue.main.async(execute: {
@@ -88,7 +93,7 @@ open class AELog {
         return fileName
     }
     
-    private func isLogEnabledForFileWithName(_ fileName: String) -> Bool {
+    private func isLogEnabledForFile(with fileName: String) -> Bool {
         guard let
             files = config.files,
             let fileEnabled = files[fileName]
