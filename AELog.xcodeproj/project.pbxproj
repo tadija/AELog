@@ -24,11 +24,11 @@
 		8BDEC8B21DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
 		8BDEC8B31DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
 		8BDEC8B41DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
-		8BDEC8B61DB264C10074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
-		8BDEC8B71DB264C10074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
-		8BDEC8B81DB264C10074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
+		8BDEC8B61DB264C10074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
+		8BDEC8B71DB264C10074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
+		8BDEC8B81DB264C10074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
 		8BDEC8C31DB2763A0074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
-		8BDEC8C41DB2763D0074994A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Settings.swift */; };
+		8BDEC8C41DB2763D0074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		8B8464DE1CAB4B310027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8464ED1CAB4B870027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDEC8B11DB264B60074994A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		8BDEC8B51DB264C10074994A /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8BDEC8B51DB264C10074994A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8BE817A91CAF42C500FCBE4A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8BE817AA1CAF42C500FCBE4A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 			children = (
 				8B5894701CA89F6C005F0B9D /* AELog.swift */,
 				8BDEC8B11DB264B60074994A /* Line.swift */,
-				8BDEC8B51DB264C10074994A /* Settings.swift */,
+				8BDEC8B51DB264C10074994A /* Config.swift */,
 				8B5894721CA89F78005F0B9D /* Supporting Files */,
 			);
 			path = Sources;
@@ -513,7 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8B61DB264C10074994A /* Settings.swift in Sources */,
+				8BDEC8B61DB264C10074994A /* Config.swift in Sources */,
 				8B5894711CA89F6C005F0B9D /* AELog.swift in Sources */,
 				8BDEC8B21DB264B60074994A /* Line.swift in Sources */,
 			);
@@ -523,7 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8C41DB2763D0074994A /* Settings.swift in Sources */,
+				8BDEC8C41DB2763D0074994A /* Config.swift in Sources */,
 				8B8464D61CAB4AED0027AA52 /* AELog.swift in Sources */,
 				8BDEC8C31DB2763A0074994A /* Line.swift in Sources */,
 			);
@@ -533,7 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8B71DB264C10074994A /* Settings.swift in Sources */,
+				8BDEC8B71DB264C10074994A /* Config.swift in Sources */,
 				8B8464E61CAB4B400027AA52 /* AELog.swift in Sources */,
 				8BDEC8B31DB264B60074994A /* Line.swift in Sources */,
 			);
@@ -543,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8B81DB264C10074994A /* Settings.swift in Sources */,
+				8BDEC8B81DB264C10074994A /* Config.swift in Sources */,
 				8B8464F51CAB4BA20027AA52 /* AELog.swift in Sources */,
 				8BDEC8B41DB264B60074994A /* Line.swift in Sources */,
 			);

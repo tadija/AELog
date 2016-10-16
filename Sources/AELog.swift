@@ -52,7 +52,7 @@ open class AELog {
     
     weak var delegate: AELogDelegate?
     
-    let settings = Settings()
+    let config = Config()
     let queue = DispatchQueue(label: "AELog", attributes: [])
     
     // MARK: API
@@ -64,7 +64,7 @@ open class AELog {
     
     func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
-            if self.settings.isEnabled {
+            if self.config.isEnabled {
                 let fileName = self.getFileName(for: path)
                 if self.isLogEnabledForFileWithName(fileName) {
                     
@@ -90,7 +90,7 @@ open class AELog {
     
     private func isLogEnabledForFileWithName(_ fileName: String) -> Bool {
         guard let
-            files = settings.files,
+            files = config.files,
             let fileEnabled = files[fileName]
         else { return true }
         return fileEnabled

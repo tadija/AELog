@@ -1,5 +1,5 @@
 //
-// Settings.swift
+// Config.swift
 //
 // Copyright (c) 2016 Marko Tadić <tadija@me.com> http://tadija.net
 //
@@ -28,14 +28,15 @@ import Foundation
     Helper for accessing settings from the external file.
 
     Create `AELog.plist` dictionary file and add it to your target.
+    Alternative is to add `AELog` dictionary inside existing `Info.plist` file.
 
     There is `Key` struct which contains possible keys for all settings.
 */
-open class Settings {
+open class Config {
     
     // MARK: Constants
     
-    /// Setting keys which can be used in `AELog.plist` dictionary.
+    /// Setting keys which can be used in `AELog` dictionary.
     public struct Key {
         /// Boolean - Logging enabled flag (defaults to `NO`)
         public static let Enabled = "Enabled"
@@ -61,18 +62,18 @@ open class Settings {
     let dateFormatter = DateFormatter()
     
     /// Contents of AELog settings (AELog.plist file or AELog dictionary from Info.plist)
-    open private(set) lazy var plist: [String : AnyObject]? = {
+    private lazy var data: [String : AnyObject]? = {
         guard let
             path = Bundle.main.path(forResource: "AELog", ofType: "plist"),
-            let settings = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
-        else { return self.infoPlist }
-        return settings
+            let data = NSDictionary(contentsOfFile: path) as? [String : AnyObject]
+        else { return self.alternateData }
+        return data
     }()
     
-    open private(set) lazy var infoPlist: [String : AnyObject]? = {
-        guard let settings = Bundle.main.infoDictionary?["AELog"] as? [String : AnyObject]
+    private lazy var alternateData: [String : AnyObject]? = {
+        guard let data = Bundle.main.infoDictionary?["AELog"] as? [String : AnyObject]
         else { return nil }
-        return settings
+        return data
     }()
     
     // MARK: Init
@@ -85,32 +86,32 @@ open class Settings {
     
     lazy var isEnabled: Bool = { [unowned self] in
         guard let
-            settings = self.plist,
-            let enabled = settings[Key.Enabled] as? Bool
+            data = self.data,
+            let enabled = data[Key.Enabled] as? Bool
         else { return Default.Enabled }
         return enabled
     }()
     
     lazy var files: [String : Bool]? = { [unowned self] in
         guard let
-            settings = self.plist,
-            let files = settings[Key.Files] as? [String : Bool]
+            data = self.data,
+            let files = data[Key.Files] as? [String : Bool]
         else { return nil }
         return files
     }()
     
     lazy var dateFormat: String? = { [unowned self] in
         guard let
-            settings = self.plist,
-            let format = settings[Key.DateFormat] as? String
+            data = self.data,
+            let format = data[Key.DateFormat] as? String
         else { return Default.DateFormat }
         return format
     }()
     
     lazy var template: String = { [unowned self] in
         guard let
-            settings = self.plist,
-            let template = settings[Key.Template] as? String
+            data = self.data,
+            let template = data[Key.Template] as? String
         else { return Default.Template }
         return template
     }()
