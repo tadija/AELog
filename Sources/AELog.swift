@@ -72,7 +72,7 @@ open class AELog {
                     print(line.description)
                     
                     DispatchQueue.main.async(execute: {
-                        self.delegate?.didLog(line)
+                        self.delegate?.didLog(line: line)
                     })
                 }
             }
@@ -100,9 +100,13 @@ open class AELog {
 
 // MARK: - AELogDelegate
 
-/// Forwards logged lines via `didLog:` function.
 public protocol AELogDelegate: class {
     
-    func didLog(_ line: Line)
+    /**
+        Forwards latest log line from `aelog`.
+     
+        - parameter line: latest logged line.
+    */
+    func didLog(line: Line)
     
 }

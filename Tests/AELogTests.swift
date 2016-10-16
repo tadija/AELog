@@ -44,7 +44,7 @@ class AELogTests: XCTestCase, AELogDelegate {
         }
     }
     
-    func didLog(_ line: Line) {
+    func didLog(line: Line) {
         timestamp = line.date
         testLogLine(line)
     }
