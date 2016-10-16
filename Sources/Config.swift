@@ -34,7 +34,7 @@ import Foundation
 */
 public class Config {
     
-    // MARK: Constants
+    // MARK: - Constants
     
     /// Setting keys which can be used in `AELog` dictionary.
     public struct Key {
@@ -57,7 +57,7 @@ public class Config {
         static let Template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
     }
     
-    // MARK: Properties
+    // MARK: - Properties
     
     let dateFormatter = DateFormatter()
     
@@ -76,13 +76,13 @@ public class Config {
         return data
     }()
     
-    // MARK: Init
+    // MARK: - Init
     
     init() {
         dateFormatter.dateFormat = dateFormat
     }
     
-    // MARK: Settings
+    // MARK: - Settings
     
     lazy var isEnabled: Bool = { [unowned self] in
         guard let

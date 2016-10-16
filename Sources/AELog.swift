@@ -24,8 +24,6 @@
 
 import Foundation
 
-// MARK: - Top Level
-
 /** 
     Writes the textual representations of current timestamp, thread name,
     file name, line number and function name into the standard output.
@@ -41,12 +39,10 @@ public func aelog(_ message: Any = "", path: String = #file, lineNumber: Int = #
     AELog.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }
 
-// MARK: - AELog
-
 /// Handles logging called from `aelog` top-level function.
 open class AELog {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     static let shared = AELog()
     
@@ -55,7 +51,7 @@ open class AELog {
     let config = Config()
     let queue = DispatchQueue(label: "AELog", attributes: [])
     
-    // MARK: API
+    // MARK: - API
 
     /// Configures delegate for `AELog` singleton. Use it if you need additional functionality after each line of log.
     open class func launch(with delegate: AELogDelegate) {
@@ -65,26 +61,21 @@ open class AELog {
     func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
             if self.config.isEnabled {
-                let fileName = self.getFileName(for: path)
-                if self.isLogEnabledForFile(with: fileName) {
-                    
-                    let line = Line(thread: thread,
-                                    file: fileName,
-                                    number: lineNumber,
-                                    function: function,
-                                    message: message)
-                    
-                    print(line.description)
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.delegate?.didLog(line: line)
-                    })
+                let name = self.getFileName(for: path)
+                if self.isLogEnabledForFile(with: name) {
+                    let line = Line(thread: thread, file: name, number: lineNumber, function: function, message: message)
+                    self.log(line: line)
                 }
             }
         }
     }
     
-    // MARK: Helpers
+    private func log(line: Line) {
+        print(line.description)
+        self.delegate?.didLog(line: line)
+    }
+    
+    // MARK: - Helpers
     
     private func getFileName(for path: String) -> String {
         guard let
@@ -103,12 +94,11 @@ open class AELog {
     
 }
 
-// MARK: - AELogDelegate
-
 public protocol AELogDelegate: class {
     
     /**
-        Forwards latest log line from `aelog`.
+        Forwards the latest log line from `aelog`.
+        This method is called from logging queue, dispatch to main queue if needed.
      
         - parameter line: latest logged line.
     */
