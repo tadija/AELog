@@ -32,7 +32,7 @@ import Foundation
 
     There is `Key` struct which contains possible keys for all settings.
 */
-open class Config {
+public class Config {
     
     // MARK: Constants
     
@@ -78,7 +78,7 @@ open class Config {
     
     // MARK: Init
     
-    public init() {
+    init() {
         dateFormatter.dateFormat = dateFormat
     }
     
