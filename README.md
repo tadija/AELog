@@ -17,6 +17,7 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 ## Index
 - [Features](#features)
 - [Usage](#usage)
+	- [Settings](#settings)
 	- [One more thing](#one-more-thing)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -45,8 +46,10 @@ For example, if you added this on line 21 in `viewDidLoad` of your `ViewControll
 
 Ok, now for the pro-users which might want to disable logging when going live, choose between files that are making the output and ones that don't, or maybe customize format and verbosity of the log lines, this is how you can **configure AELog**:
 
+## Settings
+
 1. Create **AELog.plist** file and add it to your target or create dictionary with name **AELog** in your existing **Info.plist** file.
-2. Configure any setting the way you want (*don't forget to at least set Enable to YES in order to make it work*):
+2. Configure any setting the way you want *(don't forget to at least set `Enabled` to `YES` in order to make it work)*:
 
 	Key | Type | Description
 	------------ | ------------- | -------------
