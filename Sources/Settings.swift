@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Log settings
 open class Settings {
 
     // MARK: Constants
@@ -18,17 +19,18 @@ open class Settings {
         static let template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
     }
 
-    // MARK: Singleton
-
-    public static let shared = Settings()
-
     // MARK: Properties
 
+    /// Logging enabled flag (defaults to `true`)
     public var isEnabled = Defaults.isEnabled
 
+    /// Date format which will be used in log lines. (defaults to "yyyy-MM-dd HH:mm:ss.SSS")
     public var dateFormat = Defaults.dateFormat
+
+    /// Log lines template. (defaults to "{date} -- [{thread}] {file} ({line}) -> {function} > {message}")
     public var template = Defaults.template
 
+    /// Key: file name without extension, Value: Boolean (defaults to empty - all files log enabled)
     public var files = [String : Bool]()
 
     let dateFormatter = DateFormatter()
