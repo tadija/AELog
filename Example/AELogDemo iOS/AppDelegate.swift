@@ -14,6 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        let settings = Log.shared.settings
+        settings.isEnabled = true
+        settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+
         log()
         return true
     }
