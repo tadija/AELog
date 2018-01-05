@@ -54,7 +54,7 @@ public struct Line: CustomStringConvertible {
     
     /// Concatenated text representation of a complete log line
     public var description: String {
-        let date = AELog.shared.config.dateFormatter.string(from: self.date)
+        let date = Log.shared.config.dateFormatter.string(from: self.date)
         let desc = parse(date: date, thread: threadName, file: file, number: number, function: function, message: message)
         return desc
     }
@@ -62,7 +62,7 @@ public struct Line: CustomStringConvertible {
     private func parse(
         date: String, thread: String, file: String, number: Int, function: String, message: String) -> String {
         
-        let result = AELog.shared.config.template
+        let result = Log.shared.config.template
             .replacingOccurrences(of: "{date}", with: date)
             .replacingOccurrences(of: "{thread}", with: thread)
             .replacingOccurrences(of: "{file}", with: file)

@@ -18,7 +18,7 @@ import Foundation
 */
 public func log(message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
     let thread = Thread.current
-    AELog.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
+    Log.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }
 
 public func log(objects: Any...) {
@@ -31,13 +31,13 @@ public func log(objects: Any...) {
 }
 
 /// Handles logging called from `aelog` top-level function.
-open class AELog {
+open class Log {
     
     // MARK: - Properties
     
-    static let shared = AELog()
+    static let shared = Log()
     
-    weak var delegate: AELogDelegate?
+    weak var delegate: LogDelegate?
     
     let config = Config()
     let queue = DispatchQueue(label: "AELog", attributes: [])
@@ -45,8 +45,8 @@ open class AELog {
     // MARK: - API
 
     /// Configures delegate for `AELog` singleton. Use it if you need additional functionality after each line of log.
-    open class func launch(with delegate: AELogDelegate) {
-        AELog.shared.delegate = delegate
+    open class func launch(with delegate: LogDelegate) {
+        Log.shared.delegate = delegate
     }
     
     func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
@@ -85,7 +85,7 @@ open class AELog {
     
 }
 
-public protocol AELogDelegate: class {
+public protocol LogDelegate: class {
     
     /**
         Forwards the latest log line from `aelog`.

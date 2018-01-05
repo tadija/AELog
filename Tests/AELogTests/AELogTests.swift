@@ -7,13 +7,13 @@
 import XCTest
 @testable import AELog
 
-class AELogTests: XCTestCase, AELogDelegate {
+class AELogTests: XCTestCase, LogDelegate {
     
     fileprivate var timestamp = Date()
     
     override func setUp() {
         super.setUp()
-        AELog.launch(with: self)
+        Log.launch(with: self)
     }
     
     override func tearDown() {
