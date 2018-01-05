@@ -39,6 +39,15 @@ public func log(message: Any = "", path: String = #file, lineNumber: Int = #line
     AELog.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }
 
+public func log(objects: Any...) {
+    var msg = "\n\n"
+    for (index, element) in objects.enumerated() {
+        let mirror = Mirror(reflecting: element)
+        msg += "\(index): \(mirror.subjectType) | \(element)\n"
+    }
+    log(message: msg)
+}
+
 /// Handles logging called from `aelog` top-level function.
 open class AELog {
     
