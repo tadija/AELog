@@ -6,39 +6,19 @@
 
 import Foundation
 
-/**
-    - NOTE: If `Log.shared.settings.isEnabled = false` this will do nothing.
+public protocol LogDelegate: class {
 
-    Writes the textual representations of current timestamp, thread name,
-    file name, line number and function name into the standard output.
-    You can optionally provide custom message to be added at the end of a log line.
- 
-    - parameter message: Custom text which will be added at the end of a log line
-*/
-public func log(message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
-    let thread = Thread.current
-    Log.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
+    /**
+        Forwards the latest log line.
+        This method is called from logging queue, dispatch to main queue if needed.
+
+        - parameter line: latest logged line.
+    */
+    func didLog(line: Line)
+
 }
 
-/**
-    - NOTE: If `Log.shared.settings.isEnabled = false` this will do nothing.
-
-    Writes the textual representations of current timestamp, thread name,
-    file name, line number and function name into the standard output.
-    Message will automatically be provided at the end of a log line made from input parameters.
-
-    - parameter elements: collection of type `Any`.
-*/
-public func log(elements: Any...) {
-    var msg = "\n\n"
-    for (index, element) in elements.enumerated() {
-        let mirror = Mirror(reflecting: element)
-        msg += "\(index): \(mirror.subjectType) | \(element)\n"
-    }
-    log(message: msg)
-}
-
-/// Handles logging from top-level functions.
+/// Handles logging from top level functions
 open class Log {
     
     // MARK: Singleton
@@ -67,11 +47,6 @@ open class Log {
         }
     }
     
-    private func log(line: Line) {
-        print(line.description)
-        self.delegate?.didLog(line: line)
-    }
-    
     // MARK: Helpers
     
     private func getFileName(for path: String) -> String {
@@ -87,17 +62,10 @@ open class Log {
         }
         return fileEnabled
     }
-    
-}
 
-public protocol LogDelegate: class {
-    
-    /**
-        Forwards the latest log line.
-        This method is called from logging queue, dispatch to main queue if needed.
-     
-        - parameter line: latest logged line.
-    */
-    func didLog(line: Line)
+    private func log(line: Line) {
+        print(line.description)
+        self.delegate?.didLog(line: line)
+    }
     
 }
