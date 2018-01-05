@@ -32,10 +32,10 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 
 log(message: "hi there")
 
-/// For example, if you added this on line 21 in `viewDidLoad` of your `ViewController`, this is how your output might look:
+/// - Note: if this was on line 21 in `viewDidLoad` of a `ViewController`, output could look like this:
 /// 2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() > hi there
 
-/// Log Elements (if you just want to quickly log some interesting variables at the moment)
+/// Log Elements (just quickly log some interesting variables at the moment)
 
 let x: CGFloat = 21
 let y: CGFloat = 8
@@ -44,6 +44,14 @@ let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
 
 log(elements: x, y, size, rect)
 
+/// - Note: in this case output could look like this:
+/// 04:01:05.967 -- ViewController (30) -> viewDidAppear > 
+
+/// 0: Double | 21.0
+/// 1: Double | 8.0
+/// 2: CGSize | (19.0, 84.0)
+/// 3: CGRect | (21.0, 8.0, 19.0, 84.0)
+
 /// Log Settings
 
 let settings = Log.shared.settings
@@ -51,7 +59,7 @@ settings.isEnabled = true
 settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
 
-/// - Note: you can toggle logging for specific files like this:
+/// - Note: toggle logging for specific files like this:
 settings.files = [
     "AppDelegate" : false,
     "ViewController" : true
@@ -62,7 +70,7 @@ settings.files = [
 Log.shared.delegate = self
 
 func didLog(line: Line) {
-    /// do something here?
+    /// - Note: do something here?
 }
 ```
 
