@@ -16,29 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        aelog()
+        log()
         return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        aelog()
+        log()
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        aelog()
+        log()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        aelog()
+        log()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        aelog()
+        log()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        aelog()
+        log()
     }
 
 }
-

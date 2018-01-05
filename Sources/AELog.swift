@@ -34,7 +34,7 @@ import Foundation
  
     - parameter message: Custom text which will be added at the end of a log line
 */
-public func aelog(_ message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
+public func log(message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
     let thread = Thread.current
     AELog.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }

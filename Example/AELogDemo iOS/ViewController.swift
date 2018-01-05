@@ -13,17 +13,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        aelog()
+        log()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        aelog()
+        log()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        aelog()
+        log()
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                aelog(sender)
+                log(message: sender)
             })
         }
     }
