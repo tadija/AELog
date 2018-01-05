@@ -401,7 +401,7 @@
 					};
 					8B8464DD1CAB4B310027AA52 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 					8B8464EC1CAB4B870027AA52 = {
 						CreatedOnToolsVersion = 7.3;
@@ -859,6 +859,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -880,6 +881,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
