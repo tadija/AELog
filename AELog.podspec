@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name = 'AELog'
-    s.version = '0.3.0'
+    s.version = '0.3.2'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
     s.summary = 'Simple, lightweight and flexible debug logging framework written in Swift'
 
@@ -11,8 +11,6 @@ Pod::Spec.new do |s|
 
     s.source = { :git => 'https://github.com/tadija/AELog.git', :tag => s.version }
     s.source_files = 'Sources/*.swift'
-
-    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 
     s.ios.deployment_target = '8.0'
     s.watchos.deployment_target = '2.0'
