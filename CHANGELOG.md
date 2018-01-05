@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.4.1
+
+- Minor improvements and refactoring
+
 ## Version 0.4.0
 
 - Renamed class `AELog` to `Log`

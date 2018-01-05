@@ -34,7 +34,7 @@ open class Settings {
     /// Log lines template. (defaults to "{date} -- [{thread}] {file} ({line}) -> {function} > {message}")
     public var template = Defaults.template
 
-    /// Key: file name without extension, Value: Boolean (defaults to empty - all files log enabled)
+    /// Key: file name without extension (defaults to empty - logging enabled in all files)
     public var files = [String : Bool]()
 
     let dateFormatter = DateFormatter()

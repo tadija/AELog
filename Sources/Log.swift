@@ -6,41 +6,19 @@
 
 import Foundation
 
-/** 
-    Writes the textual representations of current timestamp, thread name,
-    file name, line number and function name into the standard output.
- 
-    You can optionally provide custom message to be added at the end of a log line.
- 
-    - NOTE: If `Log` setting "Enabled" is set to "NO" this will do nothing.
- 
-    - parameter message: Custom text which will be added at the end of a log line
-*/
-public func log(message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
-    let thread = Thread.current
-    Log.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
+public protocol LogDelegate: class {
+
+    /**
+        Forwards the latest log line.
+        This method is called from logging queue, dispatch to main queue if needed.
+
+        - parameter line: latest logged line.
+    */
+    func didLog(line: Line)
+
 }
 
-/**
-    Writes the textual representations of current timestamp, thread name,
-    file name, line number and function name into the standard output.
-
-    Message will automatically be provided at the end of a log line based on input parameters.
-
-    - NOTE: If `Log` setting "Enabled" is set to "NO" this will do nothing.
-
-    - parameter elements: collection of type `Any`.
-*/
-public func log(elements: Any...) {
-    var msg = "\n\n"
-    for (index, element) in elements.enumerated() {
-        let mirror = Mirror(reflecting: element)
-        msg += "\(index): \(mirror.subjectType) | \(element)\n"
-    }
-    log(message: msg)
-}
-
-/// Handles logging from top-level functions.
+/// Handles logging from top level functions
 open class Log {
     
     // MARK: Singleton
@@ -58,19 +36,15 @@ open class Log {
     
     func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
-            if self.settings.isEnabled {
-                let name = self.getFileName(for: path)
-                if self.isLogEnabledForFile(with: name) {
-                    let line = Line(thread: thread, file: name, number: lineNumber, function: function, message: message)
-                    self.log(line: line)
-                }
+            guard self.settings.isEnabled else {
+                return
+            }
+            let name = self.getFileName(for: path)
+            if self.isLogEnabledForFile(with: name) {
+                let line = Line(thread: thread, file: name, number: lineNumber, function: function, message: message)
+                self.log(line: line)
             }
         }
-    }
-    
-    private func log(line: Line) {
-        print(line.description)
-        self.delegate?.didLog(line: line)
     }
     
     // MARK: Helpers
@@ -88,17 +62,10 @@ open class Log {
         }
         return fileEnabled
     }
-    
-}
 
-public protocol LogDelegate: class {
-    
-    /**
-        Forwards the latest log line.
-        This method is called from logging queue, dispatch to main queue if needed.
-     
-        - parameter line: latest logged line.
-    */
-    func didLog(line: Line)
+    private func log(line: Line) {
+        print(line.description)
+        self.delegate?.didLog(line: line)
+    }
     
 }
