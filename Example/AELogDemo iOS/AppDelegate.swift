@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let settings = Log.shared.settings
         settings.isEnabled = true
-        settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+        settings.dateFormat = "HH:mm:ss.SSS"
+        settings.template = "{date} -- {file} ({line}) -> {function} > {message}"
 
         log()
         return true

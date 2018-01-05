@@ -25,7 +25,11 @@ open class Settings {
     public var isEnabled = Defaults.isEnabled
 
     /// Date format which will be used in log lines. (defaults to "yyyy-MM-dd HH:mm:ss.SSS")
-    public var dateFormat = Defaults.dateFormat
+    public var dateFormat = Defaults.dateFormat {
+        didSet {
+            dateFormatter.dateFormat = dateFormat
+        }
+    }
 
     /// Log lines template. (defaults to "{date} -- [{thread}] {file} ({line}) -> {function} > {message}")
     public var template = Defaults.template
