@@ -27,46 +27,38 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 
 ## Usage
 
-Log lines with top level `log` function:
-
 ```swift
+/// Log Message (write less, get more)
+
 log(message: "hi there")
-```
 
-For example, if you added this on line 21 in `viewDidLoad` of your `ViewController`, this is how your output might look:
+/// For example, if you added this on line 21 in `viewDidLoad` of your `ViewController`, this is how your output might look:
+/// 2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() > hi there
 
-```
-2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() > hi there
-```
+/// Log Elements (if you just want to quickly log some interesting variables at the moment)
 
-If you just want to quickly log some interesting variables at the moment:
-
-```swift
 let x: CGFloat = 21
 let y: CGFloat = 8
 let size = CGSize(width: 19, height: 84)
 let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
+
 log(elements: x, y, size, rect)
-```
 
-You can change default settings like this:
+/// Log Settings
 
-```swift
 let settings = Log.shared.settings
 settings.isEnabled = true
 settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
 
-/// - Note: you can also toggle logging for specific files like this:
+/// - Note: you can toggle logging for specific files like this:
 settings.files = [
     "AppDelegate" : false,
     "ViewController" : true
 ]
-```
 
-And if you want, you can also become a `LogDelegate`:
+/// LogDelegate
 
-```swift
 Log.shared.delegate = self
 
 func didLog(line: Line) {
