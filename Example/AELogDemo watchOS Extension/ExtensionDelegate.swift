@@ -1,10 +1,8 @@
-//
-//  ExtensionDelegate.swift
-//  AELogDemo watchOS Extension
-//
-//  Created by Marko Tadic on 4/1/16.
-//  Copyright © 2016 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import WatchKit
 import AELog
