@@ -11,11 +11,11 @@ import AELog
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        aelog()
+        log()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        aelog()
+        log()
     }
 
 

@@ -11,12 +11,12 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        aelog()
+        log()
     }
 
     override var representedObject: Any? {
         didSet {
-            aelog()
+            log()
         }
     }
 
@@ -25,7 +25,7 @@ class ViewController: NSViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                aelog(sender)
+                log(message: sender)
             })
         }
     }
