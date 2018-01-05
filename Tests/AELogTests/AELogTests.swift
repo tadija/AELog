@@ -35,7 +35,7 @@ class AELogTests: XCTestCase, LogDelegate {
         XCTAssertEqual(timestamp, line.date)
         XCTAssertEqual(Thread.main, line.thread)
         XCTAssertEqual("AELogTests", line.file)
-        XCTAssertEqual(43, line.number)
+        XCTAssertEqual(25, line.number)
         XCTAssertEqual("testLogPerformance()", line.function)
         XCTAssertEqual("test message", line.message)
     }

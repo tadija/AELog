@@ -43,16 +43,18 @@ public func log(elements: Any...) {
 /// Handles logging from top-level functions.
 open class Log {
     
-    // MARK: - Properties
+    // MARK: Singleton
     
-    static let shared = Log()
+    public static let shared = Log()
+
+    // MARK: Properties
     
-    weak var delegate: LogDelegate?
-    
-    let config = Config()
+    public weak var delegate: LogDelegate?
+    public let settings = Settings()
+
     let queue = DispatchQueue(label: "AELog", attributes: [])
     
-    // MARK: - API
+    // MARK: API
 
     /// Configures delegate on launch. Use it if you need additional functionality after each line of log.
     open class func launch(with delegate: LogDelegate) {
@@ -61,7 +63,7 @@ open class Log {
     
     func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
-            if self.config.isEnabled {
+            if self.settings.isEnabled {
                 let name = self.getFileName(for: path)
                 if self.isLogEnabledForFile(with: name) {
                     let line = Line(thread: thread, file: name, number: lineNumber, function: function, message: message)
@@ -76,7 +78,7 @@ open class Log {
         self.delegate?.didLog(line: line)
     }
     
-    // MARK: - Helpers
+    // MARK: Helpers
     
     private func getFileName(for path: String) -> String {
         guard let
@@ -86,10 +88,9 @@ open class Log {
     }
     
     private func isLogEnabledForFile(with fileName: String) -> Bool {
-        guard let
-            files = config.files,
-            let fileEnabled = files[fileName]
-        else { return true }
+        guard let fileEnabled = settings.files[fileName] else {
+            return true
+        }
         return fileEnabled
     }
     
