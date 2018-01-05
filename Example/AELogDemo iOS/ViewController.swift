@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         let y: CGFloat = 8
         let size = CGSize(width: 19, height: 84)
         let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
-        log(objects: x, y, size, rect)
+        log(elements: x, y, size, rect)
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
