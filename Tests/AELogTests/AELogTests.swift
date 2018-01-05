@@ -40,7 +40,7 @@ class AELogTests: XCTestCase, AELogDelegate {
     
     func testLogPerformance() {
         self.measure {
-            aelog("test message")
+            log(message: "test message")
         }
     }
     
