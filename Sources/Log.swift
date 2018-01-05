@@ -21,16 +21,26 @@ public func log(message: Any = "", path: String = #file, lineNumber: Int = #line
     Log.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }
 
-public func log(objects: Any...) {
+/**
+    Writes the textual representations of current timestamp, thread name,
+    file name, line number and function name into the standard output.
+
+    Message will automatically be provided at the end of a log line based on input parameters.
+
+    - NOTE: If `Log` setting "Enabled" is set to "NO" this will do nothing.
+
+    - parameter elements: collection of type `Any`.
+*/
+public func log(elements: Any...) {
     var msg = "\n\n"
-    for (index, element) in objects.enumerated() {
+    for (index, element) in elements.enumerated() {
         let mirror = Mirror(reflecting: element)
         msg += "\(index): \(mirror.subjectType) | \(element)\n"
     }
     log(message: msg)
 }
 
-/// Handles logging called from `log` top-level functions.
+/// Handles logging from top-level functions.
 open class Log {
     
     // MARK: - Properties
@@ -44,7 +54,7 @@ open class Log {
     
     // MARK: - API
 
-    /// Configures delegate for `Log` singleton. Use it if you need additional functionality after each line of log.
+    /// Configures delegate on launch. Use it if you need additional functionality after each line of log.
     open class func launch(with delegate: LogDelegate) {
         Log.shared.delegate = delegate
     }
