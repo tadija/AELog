@@ -13,7 +13,7 @@ class AELogTests: XCTestCase, LogDelegate {
     
     override func setUp() {
         super.setUp()
-        Log.launch(with: self)
+        Log.shared.delegate = self
     }
     
     override func tearDown() {

@@ -55,11 +55,6 @@ open class Log {
     let queue = DispatchQueue(label: "AELog", attributes: [])
     
     // MARK: API
-
-    /// Configures delegate on launch. Use it if you need additional functionality after each line of log.
-    open class func launch(with delegate: LogDelegate) {
-        Log.shared.delegate = delegate
-    }
     
     func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
