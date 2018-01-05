@@ -533,7 +533,7 @@
 					};
 					8B01E87F1CADDEDE0049F98E = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 					8B01E8981CADE0F40049F98E = {
 						CreatedOnToolsVersion = 7.3;
@@ -545,7 +545,7 @@
 					};
 					8B01E8C81CADE2E00049F98E = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -944,6 +944,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -960,6 +961,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1041,6 +1043,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1056,6 +1059,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

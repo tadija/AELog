@@ -397,7 +397,7 @@
 					};
 					8B8464CD1CAB492D0027AA52 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 					8B8464DD1CAB4B310027AA52 = {
 						CreatedOnToolsVersion = 7.3;
@@ -405,7 +405,7 @@
 					};
 					8B8464EC1CAB4B870027AA52 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -818,6 +818,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -840,6 +841,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -903,6 +905,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -924,6 +927,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
