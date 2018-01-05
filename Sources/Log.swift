@@ -12,7 +12,7 @@ import Foundation
  
     You can optionally provide custom message to be added at the end of a log line.
  
-    - NOTE: If `AELog` setting "Enabled" is set to "NO" this will do nothing.
+    - NOTE: If `Log` setting "Enabled" is set to "NO" this will do nothing.
  
     - parameter message: Custom text which will be added at the end of a log line
 */
@@ -30,7 +30,7 @@ public func log(objects: Any...) {
     log(message: msg)
 }
 
-/// Handles logging called from `aelog` top-level function.
+/// Handles logging called from `log` top-level functions.
 open class Log {
     
     // MARK: - Properties
@@ -44,7 +44,7 @@ open class Log {
     
     // MARK: - API
 
-    /// Configures delegate for `AELog` singleton. Use it if you need additional functionality after each line of log.
+    /// Configures delegate for `Log` singleton. Use it if you need additional functionality after each line of log.
     open class func launch(with delegate: LogDelegate) {
         Log.shared.delegate = delegate
     }
@@ -88,7 +88,7 @@ open class Log {
 public protocol LogDelegate: class {
     
     /**
-        Forwards the latest log line from `aelog`.
+        Forwards the latest log line.
         This method is called from logging queue, dispatch to main queue if needed.
      
         - parameter line: latest logged line.

@@ -6,7 +6,7 @@
 
 import Foundation
 
-/// Custom data structure used by `AELog` for log lines.
+/// Custom data structure used for log lines.
 public struct Line: CustomStringConvertible {
     
     // MARK: - Properties
