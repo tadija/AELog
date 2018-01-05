@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.4.0
+
+- Renamed class `AELog` to `Log`
+- Renamed function `aelog` to `log(message:)`
+- Added utility function `log(elements:)` to quickly log random stuff
+- Replaced `Config` (from .plist file) with `Settings` class (configure via code)
+- Other fixes and improvements
+
 ## Version 0.3.2
 
 - Migrated to Swift 4 and recommended settings with Xcode 9.2
