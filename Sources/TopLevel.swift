@@ -29,11 +29,11 @@ public func log(message: Any = "", path: String = #file, lineNumber: Int = #line
 
     - parameter elements: collection of type `Any`.
 */
-public func log(elements: Any...) {
-    var msg = "\n\n"
+public func log(elements: Any..., path: String = #file, lineNumber: Int = #line, function: String = #function) {
+    var message = "\n\n"
     for (index, element) in elements.enumerated() {
         let mirror = Mirror(reflecting: element)
-        msg += "\(index): \(mirror.subjectType) | \(element)\n"
+        message += "\(index): \(mirror.subjectType) | \(element)\n"
     }
-    log(message: msg)
+    log(message: message, path: path, lineNumber: lineNumber, function: function)
 }
