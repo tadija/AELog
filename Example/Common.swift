@@ -1,16 +1,14 @@
-//
-//  Common.swift
-//  AELogDemo
-//
-//  Created by Marko Tadic on 4/1/16.
-//  Copyright © 2016 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import AELog
 
 func generateLogLines(count: Int) {
     for i in 0...count {
-        aelog("I'm just a log line #\(i).")
+        log(message: "I'm just a log line #\(i).")
     }
 }
 

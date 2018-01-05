@@ -1,10 +1,8 @@
-//
-//  AppDelegate.swift
-//  AELogDemo OSX
-//
-//  Created by Marko Tadic on 4/1/16.
-//  Copyright © 2016 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import Cocoa
 import AELog
@@ -13,11 +11,11 @@ import AELog
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        aelog()
+        log()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        aelog()
+        log()
     }
 
 

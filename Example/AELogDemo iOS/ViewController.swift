@@ -1,10 +1,8 @@
-//
-//  ViewController.swift
-//  AELogDemo
-//
-//  Created by Marko Tadic on 4/1/16.
-//  Copyright © 2016 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import UIKit
 import AELog
@@ -13,17 +11,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        aelog()
+        log()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        aelog()
+        log()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        aelog()
+        log()
+
+        let x: CGFloat = 21
+        let y: CGFloat = 8
+        let size = CGSize(width: 19, height: 84)
+        let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
+        log(elements: x, y, size, rect)
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
@@ -31,7 +35,7 @@ class ViewController: UIViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                aelog(sender)
+                log(message: sender)
             })
         }
     }

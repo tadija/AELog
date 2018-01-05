@@ -1,10 +1,8 @@
-//
-//  AppDelegate.swift
-//  AELogDemo tvOS
-//
-//  Created by Marko Tadic on 4/1/16.
-//  Copyright © 2016 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import UIKit
 import AELog
@@ -15,28 +13,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        aelog()
+        log()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        aelog()
+        log()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        aelog()
+        log()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        aelog()
+        log()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        aelog()
+        log()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        aelog()
+        log()
     }
 
 }

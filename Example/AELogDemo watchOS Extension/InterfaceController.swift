@@ -1,10 +1,8 @@
-//
-//  InterfaceController.swift
-//  AELogDemo watchOS Extension
-//
-//  Created by Marko Tadic on 4/1/16.
-//  Copyright © 2016 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import WatchKit
 import Foundation
@@ -14,17 +12,17 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        aelog()
+        log()
     }
 
     override func willActivate() {
         super.willActivate()
-        aelog()
+        log()
     }
 
     override func didDeactivate() {
         super.didDeactivate()
-        aelog()
+        log()
     }
     
     @IBAction func didTapButton() {
@@ -32,7 +30,7 @@ class InterfaceController: WKInterfaceController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                aelog()
+                log()
             })
         }
     }

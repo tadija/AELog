@@ -11,24 +11,24 @@
 		8B04F5771CB00AA60002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8464ED1CAB4B870027AA52 /* AELog.framework */; };
 		8B04F5871CB00B420002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8464CE1CAB492D0027AA52 /* AELog.framework */; };
 		8B5894691CA89F27005F0B9D /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B5894711CA89F6C005F0B9D /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
+		8B5894711CA89F6C005F0B9D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* Log.swift */; };
 		8B5CDB6D1F50FCB10078CE2E /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CDB6B1F50FCA50078CE2E /* AELogTests.swift */; };
 		8B5CDB6F1F50FCB30078CE2E /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CDB6B1F50FCA50078CE2E /* AELogTests.swift */; };
 		8B5CDB701F50FCC60078CE2E /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CDB6B1F50FCA50078CE2E /* AELogTests.swift */; };
-		8B8464D61CAB4AED0027AA52 /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
+		8B6512631FFF0A06001FB2DC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6512621FFF0A06001FB2DC /* Settings.swift */; };
+		8B6512641FFF0AE5001FB2DC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6512621FFF0A06001FB2DC /* Settings.swift */; };
+		8B6512651FFF0AE6001FB2DC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6512621FFF0A06001FB2DC /* Settings.swift */; };
+		8B6512661FFF0AE7001FB2DC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6512621FFF0A06001FB2DC /* Settings.swift */; };
+		8B8464D61CAB4AED0027AA52 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* Log.swift */; };
 		8B8464D81CAB4B0B0027AA52 /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B8464E61CAB4B400027AA52 /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
+		8B8464E61CAB4B400027AA52 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* Log.swift */; };
 		8B8464E71CAB4B480027AA52 /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B8464F51CAB4BA20027AA52 /* AELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* AELog.swift */; };
+		8B8464F51CAB4BA20027AA52 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* Log.swift */; };
 		8B8464F61CAB4BA40027AA52 /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BDEC8B21DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
 		8BDEC8B31DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
 		8BDEC8B41DB264B60074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
-		8BDEC8B61DB264C10074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
-		8BDEC8B71DB264C10074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
-		8BDEC8B81DB264C10074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
 		8BDEC8C31DB2763A0074994A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B11DB264B60074994A /* Line.swift */; };
-		8BDEC8C41DB2763D0074994A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEC8B51DB264C10074994A /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,13 +65,13 @@
 		8B5894651CA89F27005F0B9D /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5894681CA89F27005F0B9D /* AELog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELog.h; sourceTree = "<group>"; };
 		8B58946A1CA89F27005F0B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B5894701CA89F6C005F0B9D /* AELog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AELog.swift; sourceTree = "<group>"; };
+		8B5894701CA89F6C005F0B9D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8B5CDB6B1F50FCA50078CE2E /* AELogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AELogTests.swift; path = AELogTests/AELogTests.swift; sourceTree = "<group>"; };
+		8B6512621FFF0A06001FB2DC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8B8464CE1CAB492D0027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8464DE1CAB4B310027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8464ED1CAB4B870027AA52 /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDEC8B11DB264B60074994A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		8BDEC8B51DB264C10074994A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8BE817A91CAF42C500FCBE4A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8BE817AA1CAF42C500FCBE4A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 				8BE817AA1CAF42C500FCBE4A /* README.md */,
 				8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */,
 				8B04F58F1CB060CC0002F869 /* AELog.podspec */,
-				8B04F5901CB064D20002F869 /* Package.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 		8B58945B1CA89F27005F0B9D = {
 			isa = PBXGroup;
 			children = (
+				8B04F5901CB064D20002F869 /* Package.swift */,
 				8B5894671CA89F27005F0B9D /* Sources */,
 				8B04F5641CB009DD0002F869 /* Tests */,
 				8B5894661CA89F27005F0B9D /* Products */,
@@ -189,9 +189,9 @@
 		8B5894671CA89F27005F0B9D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8B5894701CA89F6C005F0B9D /* AELog.swift */,
+				8B5894701CA89F6C005F0B9D /* Log.swift */,
 				8BDEC8B11DB264B60074994A /* Line.swift */,
-				8BDEC8B51DB264C10074994A /* Config.swift */,
+				8B6512621FFF0A06001FB2DC /* Settings.swift */,
 				8B5894721CA89F78005F0B9D /* Supporting Files */,
 			);
 			path = Sources;
@@ -397,7 +397,7 @@
 					};
 					8B8464CD1CAB492D0027AA52 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 					8B8464DD1CAB4B310027AA52 = {
 						CreatedOnToolsVersion = 7.3;
@@ -405,7 +405,7 @@
 					};
 					8B8464EC1CAB4B870027AA52 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -513,8 +513,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8B61DB264C10074994A /* Config.swift in Sources */,
-				8B5894711CA89F6C005F0B9D /* AELog.swift in Sources */,
+				8B5894711CA89F6C005F0B9D /* Log.swift in Sources */,
+				8B6512631FFF0A06001FB2DC /* Settings.swift in Sources */,
 				8BDEC8B21DB264B60074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,8 +523,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8C41DB2763D0074994A /* Config.swift in Sources */,
-				8B8464D61CAB4AED0027AA52 /* AELog.swift in Sources */,
+				8B8464D61CAB4AED0027AA52 /* Log.swift in Sources */,
+				8B6512661FFF0AE7001FB2DC /* Settings.swift in Sources */,
 				8BDEC8C31DB2763A0074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,8 +533,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8B71DB264C10074994A /* Config.swift in Sources */,
-				8B8464E61CAB4B400027AA52 /* AELog.swift in Sources */,
+				8B8464E61CAB4B400027AA52 /* Log.swift in Sources */,
+				8B6512641FFF0AE5001FB2DC /* Settings.swift in Sources */,
 				8BDEC8B31DB264B60074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,8 +543,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDEC8B81DB264C10074994A /* Config.swift in Sources */,
-				8B8464F51CAB4BA20027AA52 /* AELog.swift in Sources */,
+				8B8464F51CAB4BA20027AA52 /* Log.swift in Sources */,
+				8B6512651FFF0AE6001FB2DC /* Settings.swift in Sources */,
 				8BDEC8B41DB264B60074994A /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -818,6 +818,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -840,6 +841,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -903,6 +905,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -924,6 +927,7 @@
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};

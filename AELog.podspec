@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name = 'AELog'
-    s.version = '0.3.2'
+    s.version = '0.4.0'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
     s.summary = 'Simple, lightweight and flexible debug logging framework written in Swift'
 

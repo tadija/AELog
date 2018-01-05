@@ -12,12 +12,10 @@
 		8B01E85A1CADDDD60049F98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8581CADDDD60049F98E /* Main.storyboard */; };
 		8B01E85C1CADDDD60049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E85B1CADDDD60049F98E /* Assets.xcassets */; };
 		8B01E85F1CADDDD60049F98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E85D1CADDDD60049F98E /* LaunchScreen.storyboard */; };
-		8B01E8671CADDE030049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
 		8B01E8831CADDEDE0049F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8821CADDEDE0049F98E /* AppDelegate.swift */; };
 		8B01E8851CADDEDE0049F98E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8841CADDEDE0049F98E /* ViewController.swift */; };
 		8B01E8881CADDEDE0049F98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8861CADDEDE0049F98E /* Main.storyboard */; };
 		8B01E88A1CADDEDE0049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8891CADDEDE0049F98E /* Assets.xcassets */; };
-		8B01E8961CADE03E0049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
 		8B01E89D1CADE0F40049F98E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E89B1CADE0F40049F98E /* Interface.storyboard */; };
 		8B01E89F1CADE0F40049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E89E1CADE0F40049F98E /* Assets.xcassets */; };
 		8B01E8A61CADE0F40049F98E /* AELogDemo watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8B01E8A51CADE0F40049F98E /* AELogDemo watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -25,12 +23,10 @@
 		8B01E8AD1CADE0F40049F98E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8AC1CADE0F40049F98E /* ExtensionDelegate.swift */; };
 		8B01E8AF1CADE0F40049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8AE1CADE0F40049F98E /* Assets.xcassets */; };
 		8B01E8B31CADE0F40049F98E /* AELogDemo watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8B01E8991CADE0F40049F98E /* AELogDemo watchOS.app */; };
-		8B01E8C21CADE25C0049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
 		8B01E8CC1CADE2E00049F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8CB1CADE2E00049F98E /* AppDelegate.swift */; };
 		8B01E8CE1CADE2E00049F98E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E8CD1CADE2E00049F98E /* ViewController.swift */; };
 		8B01E8D01CADE2E00049F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8CF1CADE2E00049F98E /* Assets.xcassets */; };
 		8B01E8D31CADE2E00049F98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8D11CADE2E00049F98E /* Main.storyboard */; };
-		8B01E8DE1CADE4F80049F98E /* AELog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E8661CADDE030049F98E /* AELog.plist */; };
 		8B01E8EF1CADE6330049F98E /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8E81CADE62B0049F98E /* AELog.framework */; };
 		8B01E8F01CADE6330049F98E /* AELog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8E81CADE62B0049F98E /* AELog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B01E8F31CADE6390049F98E /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B01E8EE1CADE62B0049F98E /* AELog.framework */; };
@@ -216,7 +212,6 @@
 		8B01E85B1CADDDD60049F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B01E85E1CADDDD60049F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B01E8601CADDDD60049F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B01E8661CADDE030049F98E /* AELog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AELog.plist; sourceTree = "<group>"; };
 		8B01E8801CADDEDE0049F98E /* AELogDemo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AELogDemo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B01E8821CADDEDE0049F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B01E8841CADDEDE0049F98E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -281,7 +276,6 @@
 		8B01E8481CADDDD60049F98E = {
 			isa = PBXGroup;
 			children = (
-				8B01E8661CADDE030049F98E /* AELog.plist */,
 				8B01E9011CAF0DFB0049F98E /* Common.swift */,
 				8B01E8531CADDDD60049F98E /* AELogDemo iOS */,
 				8B01E8811CADDEDE0049F98E /* AELogDemo tvOS */,
@@ -533,7 +527,7 @@
 					};
 					8B01E87F1CADDEDE0049F98E = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 					8B01E8981CADE0F40049F98E = {
 						CreatedOnToolsVersion = 7.3;
@@ -545,7 +539,7 @@
 					};
 					8B01E8C81CADE2E00049F98E = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -635,7 +629,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B01E85F1CADDDD60049F98E /* LaunchScreen.storyboard in Resources */,
-				8B01E8671CADDE030049F98E /* AELog.plist in Resources */,
 				8B01E85C1CADDDD60049F98E /* Assets.xcassets in Resources */,
 				8B01E85A1CADDDD60049F98E /* Main.storyboard in Resources */,
 			);
@@ -647,7 +640,6 @@
 			files = (
 				8B01E88A1CADDEDE0049F98E /* Assets.xcassets in Resources */,
 				8B01E8881CADDEDE0049F98E /* Main.storyboard in Resources */,
-				8B01E8961CADE03E0049F98E /* AELog.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +657,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B01E8AF1CADE0F40049F98E /* Assets.xcassets in Resources */,
-				8B01E8C21CADE25C0049F98E /* AELog.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +666,6 @@
 			files = (
 				8B01E8D01CADE2E00049F98E /* Assets.xcassets in Resources */,
 				8B01E8D31CADE2E00049F98E /* Main.storyboard in Resources */,
-				8B01E8DE1CADE4F80049F98E /* AELog.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +934,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -960,6 +951,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1041,6 +1033,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1056,6 +1049,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tadija.AELogDemo-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
