@@ -1,7 +1,7 @@
 # AELog
 **Simple, lightweight and flexible debug logging framework written in Swift**
 
-[![Language Swift 3.0](https://img.shields.io/badge/Language-Swift%203.0-orange.svg?style=flat)](https://swift.org)
+[![Language Swift 4.0](https://img.shields.io/badge/Language-Swift%204.0-orange.svg?style=flat)](https://swift.org)
 [![Platforms iOS | watchOS | tvOS | OSX](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20OS%20X-lightgray.svg?style=flat)](http://www.apple.com)
 [![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat)](https://github.com/tadija/AELog/blob/master/LICENSE)
 
@@ -17,9 +17,6 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 ## Index
 - [Features](#features)
 - [Usage](#usage)
-	- [Settings](#settings)
-	- [One more thing](#one-more-thing)
-- [Requirements](#requirements)
 - [Installation](#installation)
 - [License](#license)
 
@@ -27,15 +24,13 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 - **Top level logging** which can be disabled when needed
 - Enable or disable logging **on a file level**
 - **Customizable format and verbosity** of log lines
-- Covered with [unit tests](https://github.com/tadija/AELog/blob/master/Tests/AELogTests.swift)
-- Covered with [docs](http://cocoadocs.org/docsets/AELog)
 
 ## Usage
 
-Still there? All right, this is how you would use it:
+Log lines with top level `log` function:
 
 ```swift
-aelog("hi there")
+log(message: "hi there")
 ```
 
 For example, if you added this on line 21 in `viewDidLoad` of your `ViewController`, this is how your output might look:
@@ -44,29 +39,44 @@ For example, if you added this on line 21 in `viewDidLoad` of your `ViewControll
 2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() > hi there
 ```
 
-Ok, now for the pro-users which might want to disable logging when going live, choose between files that are making the output and ones that don't, or maybe customize format and verbosity of the log lines, this is how you can **configure AELog**:
+If you just want to quickly log some interesting variables at the moment:
 
-## Settings
+```swift
+let x: CGFloat = 21
+let y: CGFloat = 8
+let size = CGSize(width: 19, height: 84)
+let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
+log(elements: x, y, size, rect)
+```
 
-1. Create **AELog.plist** file and add it to your target or create dictionary with name **AELog** in your existing **Info.plist** file.
-2. Configure any setting the way you want *(don't forget to at least set `Enabled` to `YES` in order to make it work)*:
+You can change default settings like this:
 
-	Key | Type | Description
-	------------ | ------------- | -------------
-	Enabled | Boolean | Logging enabled flag. (defaults to `NO`)
-	Files | Dictionary | Key: file name, Value: Boolean (defaults to empty - all files log enabled)
-	DateFormat | String | Date format which will be used in log lines. (defaults to `yyyy-MM-dd HH:mm:ss.SSS`)
-	Template | String | Log lines template. (defaults to `{date} -- [{thread}] {file} ({line}) -> {function} > {message}`)
-	
-That's all there is. You're the master of `AELog` now. Happy coding!
+```swift
+let settings = Log.shared.settings
+settings.isEnabled = true
+settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+
+/// - Note: you can also toggle logging for specific files like this:
+settings.files = [
+    "AppDelegate" : false,
+    "ViewController" : true
+]
+```
+
+And if you want, you can also become a `LogDelegate`:
+
+```swift
+Log.shared.delegate = self
+
+func didLog(line: Line) {
+    /// do something here?
+}
+```
 
 ### One more thing
 
 Have you ever wanted to see the output of your app while you're not at your computer, like in real time directly on your iOS device? Yeah, me neither, but just in case you change your mind (like I did), check out [AEConsole](https://github.com/tadija/AEConsole) - **customizable console UI overlay with debug log on top of your iOS app**. After all, `AELog` was made just to complement `AEConsole`. :)
-	
-## Requirements
-- Xcode 8.0+
-- AELog doesn't require any additional libraries for it to work.
 
 ## Installation
 
