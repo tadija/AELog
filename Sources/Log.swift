@@ -7,41 +7,54 @@
 import Foundation
 
 public protocol LogDelegate: class {
-
-    /**
-        Forwards the latest log line.
-        This method is called from logging queue, dispatch to main queue if needed.
-
-        - parameter line: logged line.
-        - parameter mode: log mode.
-    */
+    /// Forwards the latest log line.
+    /// This method is called from logging queue, dispatch to main queue if needed.
+    ///
+    /// - Parameters:
+    ///   - line: logged line
+    ///   - mode: log mode
     func didLog(line: Line, mode: Log.Mode)
-
 }
 
 /// Handles logging from top level functions
 open class Log {
 
-    // MARK: Types
-
+    /// Logging Mode
+    ///
+    /// - print: Writes to debugger console only.
+    /// - nsLog: Writes to both debugger and device console.
     public enum Mode {
         case print
         case nsLog
     }
-    
-    // MARK: Singleton
-    
-    public static let shared = Log()
 
     // MARK: Properties
-    
+
+    /// Singleton
+    public static let shared = Log()
+
+    /// Log Delegate
     public weak var delegate: LogDelegate?
+
+    /// Log Settings
     public let settings = Settings()
 
     private let queue = DispatchQueue(label: "AELog")
     
     // MARK: API
-    
+
+    /// Performs printing to standard output based on input parameters.
+    ///
+    /// `Mode.print` will work only if logging is enabled and specific file is not disabled in `settings`.
+    /// `Mode.nsLog` will always work irrespective of other settings.
+    ///
+    /// - Parameters:
+    ///   - mode: Logging mode
+    ///   - thread: Calling thread
+    ///   - path: Calling path
+    ///   - lineNumber: Calling line number
+    ///   - function: Calling function
+    ///   - text: Custom text
     public func print(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, text: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled || mode == .nsLog else {
