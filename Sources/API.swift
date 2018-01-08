@@ -16,7 +16,7 @@ import Foundation
 
     - parameter message: Custom text which will be added at the end of a log line
 */
-public func log(message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
+public func debugLog(_ message: Any = "", path: String = #file, lineNumber: Int = #line, function: String = #function) {
     let thread = Thread.current
     Log.shared.log(thread: thread, path: path, lineNumber: lineNumber, function: function, message: "\(message)")
 }
@@ -31,11 +31,11 @@ public func log(message: Any = "", path: String = #file, lineNumber: Int = #line
 
     - parameter elements: collection of type `Any`.
 */
-public func log(variables: Any..., path: String = #file, lineNumber: Int = #line, function: String = #function) {
+public func debugLog(variables: Any..., path: String = #file, lineNumber: Int = #line, function: String = #function) {
     var message = "\n\n"
     for (index, element) in variables.enumerated() {
         let mirror = Mirror(reflecting: element)
         message += "\(index): \(mirror.subjectType) | \(element)\n"
     }
-    log(message: message, path: path, lineNumber: lineNumber, function: function)
+    debugLog(message, path: path, lineNumber: lineNumber, function: function)
 }
