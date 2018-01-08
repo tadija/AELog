@@ -12,9 +12,10 @@ public protocol LogDelegate: class {
         Forwards the latest log line.
         This method is called from logging queue, dispatch to main queue if needed.
 
-        - parameter line: latest logged line.
+        - parameter line: logged line.
+        - parameter mode: log mode.
     */
-    func didLog(line: Line)
+    func didLog(line: Line, mode: Log.Mode)
 
 }
 
@@ -23,7 +24,7 @@ open class Log {
 
     // MARK: Types
 
-    enum Mode {
+    public enum Mode {
         case print
         case debugPrint
         case nsLog
@@ -38,11 +39,11 @@ open class Log {
     public weak var delegate: LogDelegate?
     public let settings = Settings()
 
-    let queue = DispatchQueue(label: "AELog", attributes: [])
+    private let queue = DispatchQueue(label: "AELog", attributes: [])
     
     // MARK: API
     
-    func log(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
+    public func log(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled || mode == .nsLog else {
                 return
@@ -80,7 +81,7 @@ open class Log {
         case .nsLog:
             NSLog(line.description)
         }
-        self.delegate?.didLog(line: line)
+        self.delegate?.didLog(line: line, mode: mode)
     }
     
 }

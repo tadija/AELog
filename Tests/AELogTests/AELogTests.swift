@@ -25,12 +25,12 @@ class AELogTests: XCTestCase, LogDelegate {
             debugLog("test message")
         }
     }
-    
-    func didLog(line: Line) {
+
+    func didLog(line: Line, mode: Log.Mode) {
         timestamp = line.date
         testLogLine(line)
     }
-    
+
     func testLogLine(_ line: Line) {
         XCTAssertEqual(timestamp, line.date)
         XCTAssertEqual(Thread.main, line.thread)
