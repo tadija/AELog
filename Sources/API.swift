@@ -8,7 +8,7 @@ import Foundation
 
 // MARK: - API / Main
 
-public func logToDebugger(_ message: Any = "",
+public func logToDebugger(_ text: String = "",
                           path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
     Log.shared.print(mode: .print,
@@ -16,10 +16,10 @@ public func logToDebugger(_ message: Any = "",
                      path: path,
                      lineNumber: lineNumber,
                      function: function,
-                     message: "\(message)")
+                     text: text)
 }
 
-public func logToDevice(_ message: Any = "",
+public func logToDevice(_ text: String = "",
                         path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
     Log.shared.print(mode: .nsLog,
@@ -27,7 +27,7 @@ public func logToDevice(_ message: Any = "",
                      path: path,
                      lineNumber: lineNumber,
                      function: function,
-                     message: "\(message)")
+                     text: text)
 }
 
 // MARK: - API / Convenience
@@ -35,11 +35,11 @@ public func logToDevice(_ message: Any = "",
 public func logToDebugger(items: Any...,
                           path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
-    var message = "\n\n"
+    var text = "\n\n"
     for (index, element) in items.enumerated() {
         let type = Mirror(reflecting: element).subjectType
         let description = String(reflecting: element)
-        message += "#\(index): \(type) | \(description)\n"
+        text += "#\(index): \(type) | \(description)\n"
     }
-    logToDebugger(message, path: path, lineNumber: lineNumber, function: function)
+    logToDebugger(text, path: path, lineNumber: lineNumber, function: function)
 }

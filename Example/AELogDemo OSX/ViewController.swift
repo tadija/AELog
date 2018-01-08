@@ -25,7 +25,7 @@ class ViewController: NSViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                logToDebugger(sender)
+                logToDebugger(items: sender)
             })
         }
     }

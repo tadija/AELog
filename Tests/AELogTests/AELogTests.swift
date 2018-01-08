@@ -22,7 +22,7 @@ class AELogTests: XCTestCase, LogDelegate {
     
     func testLogPerformance() {
         self.measure {
-            logToDebugger("test message")
+            logToDebugger("test log text")
         }
     }
 
@@ -37,7 +37,7 @@ class AELogTests: XCTestCase, LogDelegate {
         XCTAssertEqual("AELogTests", line.file)
         XCTAssertEqual(25, line.number)
         XCTAssertEqual("testLogPerformance()", line.function)
-        XCTAssertEqual("test message", line.message)
+        XCTAssertEqual("test log text", line.text)
     }
     
 }

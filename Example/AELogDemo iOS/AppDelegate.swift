@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         /// - Note: Customize format of log lines like this, these are defaults:
         settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+        settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {text}"
 
         logToDebugger()
         return true

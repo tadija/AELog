@@ -42,14 +42,14 @@ open class Log {
     
     // MARK: API
     
-    public func print(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
+    public func print(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, text: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled || mode == .nsLog else {
                 return
             }
             let name = self.getFileName(for: path)
             if self.isLogEnabledForFile(with: name) || mode == .nsLog {
-                let line = Line(thread: thread, file: name, number: lineNumber, function: function, message: message)
+                let line = Line(thread: thread, file: name, number: lineNumber, function: function, text: text)
                 self.log(line: line, mode: mode)
             }
         }

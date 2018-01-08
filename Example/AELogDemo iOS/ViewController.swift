@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
 
         queue.async {
-            logToDebugger("This is coming from background thread")
+            logToDebugger("This is coming from background thread.")
         }
 
         logToDevice("This will be logged to device console.")
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                logToDebugger(sender)
+                logToDebugger(items: sender)
             })
         }
     }
