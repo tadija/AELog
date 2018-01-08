@@ -38,7 +38,7 @@ open class Log {
     public weak var delegate: LogDelegate?
     public let settings = Settings()
 
-    private let queue = DispatchQueue(label: "AELog", attributes: [])
+    private let queue = DispatchQueue(label: "AELog")
     
     // MARK: API
     

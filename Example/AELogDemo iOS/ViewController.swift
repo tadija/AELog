@@ -30,7 +30,13 @@ class ViewController: UIViewController {
         let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
         let range = 1...5
         logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
+
+        queue.async {
+            logToDebugger("This is coming from background thread")
+        }
     }
+
+    private let queue = DispatchQueue(label: "Custom")
     
     @IBAction func didTapButton(_ sender: UIButton) {
         let queue = DispatchQueue.global()

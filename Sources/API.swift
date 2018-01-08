@@ -9,10 +9,10 @@ import Foundation
 // MARK: - API / Main
 
 public func logToDebugger(_ message: Any = "",
-    thread: Thread = .current, path: String = #file, lineNumber: Int = #line, function: String = #function)
+                          path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
     Log.shared.print(mode: .print,
-                     thread: thread,
+                     thread: Thread.current,
                      path: path,
                      lineNumber: lineNumber,
                      function: function,
@@ -20,10 +20,10 @@ public func logToDebugger(_ message: Any = "",
 }
 
 public func logToDevice(_ message: Any = "",
-    thread: Thread = .current, path: String = #file, lineNumber: Int = #line, function: String = #function)
+                        path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
     Log.shared.print(mode: .nsLog,
-                     thread: thread,
+                     thread: Thread.current,
                      path: path,
                      lineNumber: lineNumber,
                      function: function,
@@ -33,7 +33,7 @@ public func logToDevice(_ message: Any = "",
 // MARK: - API / Convenience
 
 public func logToDebugger(items: Any...,
-    thread: Thread = .current, path: String = #file, lineNumber: Int = #line, function: String = #function)
+                          path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
     var message = "\n\n"
     for (index, element) in items.enumerated() {
@@ -41,5 +41,5 @@ public func logToDebugger(items: Any...,
         let description = String(reflecting: element)
         message += "#\(index): \(type) | \(description)\n"
     }
-    logToDebugger(message, thread: thread, path: path, lineNumber: lineNumber, function: function)
+    logToDebugger(message, path: path, lineNumber: lineNumber, function: function)
 }
