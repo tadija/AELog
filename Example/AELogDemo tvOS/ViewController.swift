@@ -11,17 +11,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        log()
+        logToDebugger()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        log()
+        logToDebugger()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        log()
+        logToDebugger()
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                log(message: sender)
+                logToDebugger(sender)
             })
         }
     }

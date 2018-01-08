@@ -11,23 +11,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        log()
+        logToDebugger()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        log()
+        logToDebugger()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        log()
+        logToDebugger()
 
         let x: CGFloat = 21
         let y: CGFloat = 8
         let size = CGSize(width: 19, height: 84)
         let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
-        log(elements: x, y, size, rect)
+        logToDebugger(items: x, y, size, rect)
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                log(message: sender)
+                logToDebugger(sender)
             })
         }
     }
