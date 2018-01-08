@@ -1,10 +1,8 @@
-//
-//  Settings.swift
-//  AELog iOS
-//
-//  Created by Marko Tadić on 1/5/18.
-//  Copyright © 2018 AE. All rights reserved.
-//
+/**
+ *  https://github.com/tadija/AELog
+ *  Copyright (c) Marko Tadić 2016-2018
+ *  Licensed under the MIT license. See LICENSE file.
+ */
 
 import Foundation
 
