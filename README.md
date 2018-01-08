@@ -28,36 +28,54 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 ## Usage
 
 ```swift
-/// Log Message (write less, get more)
+/// Log detailed debugging information with a simple one liner:
 
-log(message: "hi there")
+logToDebugger()
 
 /// - Note: if this was on line 21 in `viewDidLoad` of a `ViewController`, output could look like this:
-/// 2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() > hi there
+/// 2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() >
 
-/// Log Elements (just quickly log some interesting variables at the moment)
+/// Add custom text to log line:
 
+logToDebugger("hi there")
+
+/// Log random items (some interesting variables at the moment)
+
+let text = "One two three four five"
 let x: CGFloat = 21
 let y: CGFloat = 8
 let size = CGSize(width: 19, height: 84)
 let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
+let range = 1...5
 
-log(elements: x, y, size, rect)
+logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
 
 /// - Note: in this case output could look like this:
 /// 04:01:05.967 -- ViewController (30) -> viewDidAppear > 
 
-/// 0: Double | 21.0
-/// 1: Double | 8.0
-/// 2: CGSize | (19.0, 84.0)
-/// 3: CGRect | (21.0, 8.0, 19.0, 84.0)
+/// #0: String | "One two three four five"
+/// #1: Double | 21.0
+/// #2: Double | 8.0
+/// #3: CGSize | (19.0, 84.0)
+/// #4: CGRect | (21.0, 8.0, 19.0, 84.0)
+/// #5: CountableClosedRange<Int> | CountableClosedRange(1...5)
+/// #6: Log | AELog.Log
+/// #7: ViewController | <AELogDemo_iOS.ViewController: 0x7fd14c41dd60>
+
+/// Log both to debugger and device console:
+
+logToDevice("this should be logged just in case...")
 
 /// Log Settings
+
+/// Enable or disable logging with one flag and customize formatting as you like.
+/// - Warning: `logToDebugger` will work only if logging is enabled and file is not disabled in settings,
+/// otherwise it will do nothing, while `logToDevice` will always work, wether logging is enabled or not.
 
 let settings = Log.shared.settings
 settings.isEnabled = true
 settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {message}"
+settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {text}"
 
 /// - Note: toggle logging for specific files like this:
 settings.files = [
@@ -69,7 +87,7 @@ settings.files = [
 
 Log.shared.delegate = self
 
-func didLog(line: Line) {
+func didLog(line: Line, mode: Log.Mode) {
     /// - Note: do something here?
 }
 ```

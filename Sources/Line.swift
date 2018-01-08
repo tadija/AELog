@@ -26,8 +26,8 @@ public struct Line: CustomStringConvertible {
     /// Function
     public let function: String
     
-    /// Custom message
-    public let message: String
+    /// Custom text
+    public let text: String
     
     private var threadName: String {
         if thread.isMainThread {
@@ -41,13 +41,13 @@ public struct Line: CustomStringConvertible {
     
     // MARK: Init
     
-    init(thread: Thread, file: String, number: Int, function: String, message: String) {
+    init(thread: Thread, file: String, number: Int, function: String, text: String) {
         self.date = Date()
         self.thread = thread
         self.file = file
         self.number = number
         self.function = function
-        self.message = message
+        self.text = text
     }
     
     // MARK: CustomStringConvertible
@@ -55,24 +55,28 @@ public struct Line: CustomStringConvertible {
     /// Concatenated text representation of a complete log line
     public var description: String {
         let date = Log.shared.settings.dateFormatter.string(from: self.date)
-        let text = parse(date: date, thread: threadName, file: file, number: number, function: function, message: message)
-        return text
+        return parse(date: date, thread: threadName, file: file, number: number, function: function, text: text)
+    }
+
+    /// Concatenated text representation of a log line without timestamp
+    public var descriptionWithoutTimestamp: String {
+        return parse(thread: threadName, file: file, number: number, function: function, text: text)
     }
     
-    private func parse(date: String,
+    private func parse(date: String? = nil,
                        thread: String,
                        file: String,
                        number: Int,
                        function: String,
-                       message: String) -> String
+                       text: String) -> String
     {
         let result = Log.shared.settings.template
-            .replacingOccurrences(of: "{date}", with: date)
+            .replacingOccurrences(of: "{date}", with: date ?? "*")
             .replacingOccurrences(of: "{thread}", with: thread)
             .replacingOccurrences(of: "{file}", with: file)
             .replacingOccurrences(of: "{line}", with: "\(number)")
             .replacingOccurrences(of: "{function}", with: function)
-            .replacingOccurrences(of: "{message}", with: message)
+            .replacingOccurrences(of: "{text}", with: text)
         return result
     }
     

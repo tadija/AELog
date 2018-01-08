@@ -16,32 +16,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let settings = Log.shared.settings
-        settings.isEnabled = true
-        settings.dateFormat = "HH:mm:ss.SSS"
-        settings.template = "{date} -- {file} ({line}) -> {function} > {message}"
 
-        log()
+         /// - Note: It's recommended to enable logging only in DEBUG mode.
+        settings.isEnabled = true
+
+        /// - Note: Customize format of log lines like this, these are defaults:
+        settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {text}"
+
+        logToDebugger()
         return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        log()
+        logToDebugger()
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        log()
+        logToDebugger()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        log()
+        logToDebugger()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        log()
+        logToDebugger()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        log()
+        logToDebugger()
     }
 
 }

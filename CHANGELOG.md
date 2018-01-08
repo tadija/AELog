@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.4.2
+
+- Major improvements and refactoring
+- Introduced `Log.Mode` for using `print` or `NSLog`
+- Renamed main API into `logToDebugger` and `logToDevice`
+
 ## Version 0.4.1
 
 - Minor improvements and refactoring

@@ -22,22 +22,22 @@ class AELogTests: XCTestCase, LogDelegate {
     
     func testLogPerformance() {
         self.measure {
-            log(message: "test message")
+            logToDebugger("test log text")
         }
     }
-    
-    func didLog(line: Line) {
+
+    func didLog(line: Line, mode: Log.Mode) {
         timestamp = line.date
         testLogLine(line)
     }
-    
+
     func testLogLine(_ line: Line) {
         XCTAssertEqual(timestamp, line.date)
         XCTAssertEqual(Thread.main, line.thread)
         XCTAssertEqual("AELogTests", line.file)
         XCTAssertEqual(25, line.number)
         XCTAssertEqual("testLogPerformance()", line.function)
-        XCTAssertEqual("test message", line.message)
+        XCTAssertEqual("test log text", line.text)
     }
     
 }

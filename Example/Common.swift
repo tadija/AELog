@@ -8,7 +8,7 @@ import AELog
 
 func generateLogLines(count: Int) {
     for i in 0...count {
-        log(message: "I'm just a log line #\(i).")
+        logToDebugger("I'm just a log line #\(i).")
     }
 }
 
