@@ -18,12 +18,12 @@ import Foundation
 */
 public func debugLog(_ message: Any = "",
                      path: String = #file, lineNumber: Int = #line, function: String = #function) {
-    Log.shared.log(mode: .print,
-                   thread: Thread.current,
-                   path: path,
-                   lineNumber: lineNumber,
-                   function: function,
-                   message: "\(message)")
+    Log.shared.print(mode: .print,
+                     thread: Thread.current,
+                     path: path,
+                     lineNumber: lineNumber,
+                     function: function,
+                     message: "\(message)")
 }
 
 /**
@@ -43,12 +43,12 @@ public func debugLog(variables: Any...,
         let mirror = Mirror(reflecting: element)
         message += "\(index): \(mirror.subjectType) | \(element)\n"
     }
-    Log.shared.log(mode: .debugPrint,
-                   thread: Thread.current,
-                   path: path,
-                   lineNumber: lineNumber,
-                   function: function,
-                   message: "\(message)")
+    Log.shared.print(mode: .debugPrint,
+                     thread: Thread.current,
+                     path: path,
+                     lineNumber: lineNumber,
+                     function: function,
+                     message: "\(message)")
 }
 
 /**
@@ -63,10 +63,10 @@ public func debugLog(variables: Any...,
 */
 public func deviceLog(_ message: Any = "",
                       path: String = #file, lineNumber: Int = #line, function: String = #function) {
-    Log.shared.log(mode: .nsLog,
-                   thread: Thread.current,
-                   path: path,
-                   lineNumber: lineNumber,
-                   function: function,
-                   message: "\(message)")
+    Log.shared.print(mode: .nsLog,
+                     thread: Thread.current,
+                     path: path,
+                     lineNumber: lineNumber,
+                     function: function,
+                     message: "\(message)")
 }

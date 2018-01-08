@@ -43,7 +43,7 @@ open class Log {
     
     // MARK: API
     
-    public func log(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
+    public func print(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled || mode == .nsLog else {
                 return
@@ -75,7 +75,7 @@ open class Log {
     private func log(line: Line, mode: Mode) {
         switch mode {
         case .print:
-            print(line.description)
+            Swift.print(line.description)
         case .debugPrint:
             debugPrint(line.description)
         case .nsLog:
