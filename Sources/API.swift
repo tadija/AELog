@@ -31,9 +31,9 @@ public func log(message: Any = "", path: String = #file, lineNumber: Int = #line
 
     - parameter elements: collection of type `Any`.
 */
-public func log(elements: Any..., path: String = #file, lineNumber: Int = #line, function: String = #function) {
+public func log(variables: Any..., path: String = #file, lineNumber: Int = #line, function: String = #function) {
     var message = "\n\n"
-    for (index, element) in elements.enumerated() {
+    for (index, element) in variables.enumerated() {
         let mirror = Mirror(reflecting: element)
         message += "\(index): \(mirror.subjectType) | \(element)\n"
     }
