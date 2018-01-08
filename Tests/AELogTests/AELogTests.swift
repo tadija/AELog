@@ -22,7 +22,7 @@ class AELogTests: XCTestCase, LogDelegate {
     
     func testLogPerformance() {
         self.measure {
-            debugLog("test message")
+            logToDebugger("test message")
         }
     }
 
