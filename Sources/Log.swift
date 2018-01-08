@@ -20,6 +20,14 @@ public protocol LogDelegate: class {
 
 /// Handles logging from top level functions
 open class Log {
+
+    // MARK: Types
+
+    enum Mode {
+        case print
+        case debugPrint
+        case nsLog
+    }
     
     // MARK: Singleton
     
@@ -34,7 +42,7 @@ open class Log {
     
     // MARK: API
     
-    func log(thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
+    func log(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled else {
                 return
