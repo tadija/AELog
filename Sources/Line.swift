@@ -55,11 +55,15 @@ public struct Line: CustomStringConvertible {
     /// Concatenated text representation of a complete log line
     public var description: String {
         let date = Log.shared.settings.dateFormatter.string(from: self.date)
-        let text = parse(date: date, thread: threadName, file: file, number: number, function: function, message: message)
-        return text
+        return parse(date: date, thread: threadName, file: file, number: number, function: function, message: message)
+    }
+
+    /// Concatenated text representation of a log line without timestamp
+    public var descriptionWithoutTimestamp: String {
+        return parse(thread: threadName, file: file, number: number, function: function, message: message)
     }
     
-    private func parse(date: String,
+    private func parse(date: String? = nil,
                        thread: String,
                        file: String,
                        number: Int,
@@ -67,7 +71,7 @@ public struct Line: CustomStringConvertible {
                        message: String) -> String
     {
         let result = Log.shared.settings.template
-            .replacingOccurrences(of: "{date}", with: date)
+            .replacingOccurrences(of: "{date}", with: date ?? "*")
             .replacingOccurrences(of: "{thread}", with: thread)
             .replacingOccurrences(of: "{file}", with: file)
             .replacingOccurrences(of: "{line}", with: "\(number)")

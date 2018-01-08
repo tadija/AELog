@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         queue.async {
             logToDebugger("This is coming from background thread")
         }
+
+        logToDevice("This will be logged to device console.")
     }
 
     private let queue = DispatchQueue(label: "Custom")

@@ -76,7 +76,7 @@ open class Log {
         case .print:
             Swift.print(line.description)
         case .nsLog:
-            NSLog(line.description)
+            NSLog(line.descriptionWithoutTimestamp)
         }
         self.delegate?.didLog(line: line, mode: mode)
     }
