@@ -37,8 +37,9 @@ public func logToDebugger(items: Any...,
 {
     var message = "\n\n"
     for (index, element) in items.enumerated() {
-        let mirror = Mirror(reflecting: element)
-        message += "#\(index): \(mirror.subjectType) | \(element)\n"
+        let type = Mirror(reflecting: element).subjectType
+        let description = String(reflecting: element)
+        message += "#\(index): \(type) | \(description)\n"
     }
     logToDebugger(message, thread: thread, path: path, lineNumber: lineNumber, function: function)
 }

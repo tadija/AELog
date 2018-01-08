@@ -26,7 +26,6 @@ open class Log {
 
     public enum Mode {
         case print
-        case debugPrint
         case nsLog
     }
     
@@ -76,8 +75,6 @@ open class Log {
         switch mode {
         case .print:
             Swift.print(line.description)
-        case .debugPrint:
-            debugPrint(line.description)
         case .nsLog:
             NSLog(line.description)
         }

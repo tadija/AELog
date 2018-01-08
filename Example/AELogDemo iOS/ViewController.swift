@@ -23,11 +23,13 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         logToDebugger()
 
+        let text = "One two three four five"
         let x: CGFloat = 21
         let y: CGFloat = 8
         let size = CGSize(width: 19, height: 84)
         let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
-        logToDebugger(items: x, y, size, rect)
+        let range = 1...5
+        logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
