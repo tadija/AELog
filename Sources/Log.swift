@@ -44,13 +44,13 @@ open class Log {
     
     func log(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, message: String) {
         queue.async { [unowned self] in
-            guard self.settings.isEnabled else {
+            guard self.settings.isEnabled || mode == .nsLog else {
                 return
             }
             let name = self.getFileName(for: path)
-            if self.isLogEnabledForFile(with: name) {
+            if self.isLogEnabledForFile(with: name) || mode == .nsLog {
                 let line = Line(thread: thread, file: name, number: lineNumber, function: function, message: message)
-                self.log(line: line)
+                self.log(line: line, mode: mode)
             }
         }
     }
@@ -58,9 +58,9 @@ open class Log {
     // MARK: Helpers
     
     private func getFileName(for path: String) -> String {
-        guard let
-            fileName = NSURL(fileURLWithPath: path).deletingPathExtension?.lastPathComponent
-        else { return "Unknown" }
+        guard let fileName = NSURL(fileURLWithPath: path).deletingPathExtension?.lastPathComponent else {
+            return "Unknown"
+        }
         return fileName
     }
     
@@ -71,8 +71,15 @@ open class Log {
         return fileEnabled
     }
 
-    private func log(line: Line) {
-        print(line.description)
+    private func log(line: Line, mode: Mode) {
+        switch mode {
+        case .print:
+            print(line.description)
+        case .debugPrint:
+            debugPrint(line.description)
+        case .nsLog:
+            NSLog(line.description)
+        }
         self.delegate?.didLog(line: line)
     }
     
