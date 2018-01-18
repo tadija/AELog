@@ -13,11 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
+        /// - Note: Access log settings
         let settings = Log.shared.settings
 
-         /// - Note: It's recommended to enable logging only in DEBUG mode.
+        /// - Note: It's recommended to disable logging for public release (defaults to enabled).
         settings.isEnabled = true
 
         /// - Note: Customize format of log lines like this, these are defaults:
