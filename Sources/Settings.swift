@@ -35,11 +35,11 @@ open class Settings {
     /// Key: file name without extension (defaults to empty - logging enabled in all files)
     public var files = [String : Bool]()
 
-    let dateFormatter = DateFormatter()
+    internal let dateFormatter = DateFormatter()
 
     // MARK: Init
 
-    init() {
+    internal init() {
         dateFormatter.dateFormat = dateFormat
     }
 
