@@ -73,6 +73,7 @@ logToDevice("this should be logged just in case...")
 /// otherwise it will do nothing, while `logToDevice` will always work, wether logging is enabled or not.
 
 let settings = Log.shared.settings
+
 settings.isEnabled = true
 settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {text}"

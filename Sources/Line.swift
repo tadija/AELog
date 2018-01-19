@@ -41,7 +41,7 @@ public struct Line: CustomStringConvertible {
     
     // MARK: Init
     
-    init(thread: Thread, file: String, number: Int, function: String, text: String) {
+    internal init(thread: Thread, file: String, number: Int, function: String, text: String) {
         self.date = Date()
         self.thread = thread
         self.file = file
