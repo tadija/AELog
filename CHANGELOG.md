@@ -1,6 +1,10 @@
 # Changelog
 
-## Version 0.4.2
+## Version 0.5.1
+
+- Minor improvements
+
+## Version 0.5.0
 
 - Major improvements and refactoring
 - Introduced `Log.Mode` for using `print` or `NSLog`
