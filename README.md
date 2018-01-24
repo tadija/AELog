@@ -30,14 +30,14 @@ If you find yourself in upcoming statements, then you probably want to use **AEL
 ```swift
 /// Log detailed debugging information with a simple one liner:
 
-logToDebugger()
+aelog()
 
 /// - Note: if this was on line 21 in `viewDidLoad` of a `ViewController`, output could look like this:
 /// 2016-04-03 21:08:00.123 -- [Main] ViewController (21) -> viewDidLoad() >
 
 /// Add custom text to log line:
 
-logToDebugger("hi there")
+aelog("hi there")
 
 /// Log random items (some interesting variables at the moment)
 
@@ -48,7 +48,7 @@ let size = CGSize(width: 19, height: 84)
 let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
 let range = 1...5
 
-logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
+aelog(text, x, y, size, rect, range, Log.shared, self)
 
 /// - Note: in this case output could look like this:
 /// 04:01:05.967 -- ViewController (30) -> viewDidAppear > 
@@ -64,13 +64,13 @@ logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
 
 /// Log both to debugger and device console:
 
-logToDevice("this should be logged just in case...")
+aelog("this should be logged just in case...", mode: .nsLog)
 
 /// Log Settings
 
 /// Enable or disable logging with one flag and customize formatting as you like.
-/// - Warning: `logToDebugger` will work only if logging is enabled and file is not disabled in settings,
-/// otherwise it will do nothing, while `logToDevice` will always work, wether logging is enabled or not.
+/// - Warning: `aelog` will by default work only if logging is enabled and file is not disabled in settings,
+/// otherwise it will do nothing, but with `mode: .nsLog` it will always work, wether logging is enabled or not.
 
 let settings = Log.shared.settings
 

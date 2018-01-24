@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.5.5
+
+- Renamed main API into `aelog` (again)
+- Major improvements and refactoring
+
 ## Version 0.5.1
 
 - Minor improvements

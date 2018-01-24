@@ -25,28 +25,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settings.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         settings.template = "{date} -- [{thread}] {file} ({line}) -> {function} > {text}"
 
-        logToDebugger()
+        aelog()
+        aelog("hello")
+        aelog("hello", 123, true)
+        aelog(["a", "b", "c"])
+        aelog(["a", "b", "c"], [1, 2, 3])
+
         return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        logToDebugger()
+        aelog()
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        logToDebugger()
+        aelog()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        logToDebugger()
+        aelog()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        logToDebugger()
+        aelog()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        logToDebugger()
+        aelog()
     }
 
 }

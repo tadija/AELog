@@ -10,15 +10,15 @@ import AELog
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        logToDebugger()
+        aelog()
     }
 
     func applicationDidBecomeActive() {
-        logToDebugger()
+        aelog()
     }
 
     func applicationWillResignActive() {
-        logToDebugger()
+        aelog()
     }
 
 }
