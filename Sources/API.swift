@@ -26,7 +26,6 @@ public func logToDebugger(_ text: String = "",
                      lineNumber: lineNumber,
                      function: function,
                      text: text)
-    debugPrint()
 }
 
 /// Writes the textual representation of input parameters into both debugger and device standard output.
