@@ -20,7 +20,7 @@ import Foundation
 public func logToDebugger(_ text: String = "",
                           path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
-    Log.shared.print(mode: .print,
+    Log.shared.write(mode: .print,
                      thread: Thread.current,
                      path: path,
                      lineNumber: lineNumber,
@@ -40,7 +40,7 @@ public func logToDebugger(_ text: String = "",
 public func logToDevice(_ text: String = "",
                         path: String = #file, lineNumber: Int = #line, function: String = #function)
 {
-    Log.shared.print(mode: .nsLog,
+    Log.shared.write(mode: .nsLog,
                      thread: Thread.current,
                      path: path,
                      lineNumber: lineNumber,

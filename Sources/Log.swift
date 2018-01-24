@@ -55,7 +55,7 @@ open class Log {
     ///   - lineNumber: Calling line number
     ///   - function: Calling function
     ///   - text: Custom text
-    public func print(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, text: String) {
+    public func write(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, text: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled || mode == .nsLog else {
                 return
@@ -87,7 +87,7 @@ open class Log {
     private func log(line: Line, mode: Mode) {
         switch mode {
         case .print:
-            Swift.print(line.description)
+            print(line.description)
         case .nsLog:
             NSLog(line.descriptionWithoutTimestamp)
         }
