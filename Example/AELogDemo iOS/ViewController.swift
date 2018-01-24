@@ -11,17 +11,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logToDebugger()
+        aelog()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        logToDebugger()
+        aelog()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        logToDebugger()
+        aelog()
 
         let text = "One two three four five"
         let x: CGFloat = 21
@@ -29,13 +29,13 @@ class ViewController: UIViewController {
         let size = CGSize(width: 19, height: 84)
         let rect = CGRect(x: x, y: y, width: size.width, height: size.height)
         let range = 1...5
-        logToDebugger(items: text, x, y, size, rect, range, Log.shared, self)
+        aelog(text, x, y, size, rect, range, Log.shared, self)
 
         queue.async {
-            logToDebugger("This is coming from background thread.")
+            aelog("This is coming from background thread.")
         }
 
-        logToDevice("This will be logged to device console.")
+        aelog("This will be logged to device console.", mode: .nsLog)
     }
 
     private let queue = DispatchQueue(label: "Custom")
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                logToDebugger(items: sender)
+                aelog(sender)
             })
         }
     }

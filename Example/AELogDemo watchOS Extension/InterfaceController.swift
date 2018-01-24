@@ -12,17 +12,17 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        logToDebugger()
+        aelog()
     }
 
     override func willActivate() {
         super.willActivate()
-        logToDebugger()
+        aelog()
     }
 
     override func didDeactivate() {
         super.didDeactivate()
-        logToDebugger()
+        aelog()
     }
     
     @IBAction func didTapButton() {
@@ -30,7 +30,7 @@ class InterfaceController: WKInterfaceController {
         queue.async {
             generateLogLines(count: Int.random(max: 1000))
             DispatchQueue.main.async(execute: {
-                logToDebugger()
+                aelog()
             })
         }
     }
