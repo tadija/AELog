@@ -10,10 +10,6 @@
 		8B04F5681CB009DD0002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B5894651CA89F27005F0B9D /* AELog.framework */; };
 		8B04F5771CB00AA60002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8464ED1CAB4B870027AA52 /* AELog.framework */; };
 		8B04F5871CB00B420002F869 /* AELog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8464CE1CAB492D0027AA52 /* AELog.framework */; };
-		8B3DBCE01FFF1EA800769460 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DBCDF1FFF1EA800769460 /* API.swift */; };
-		8B3DBCE11FFF1EA800769460 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DBCDF1FFF1EA800769460 /* API.swift */; };
-		8B3DBCE21FFF1EA800769460 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DBCDF1FFF1EA800769460 /* API.swift */; };
-		8B3DBCE31FFF1EAC00769460 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3DBCDF1FFF1EA800769460 /* API.swift */; };
 		8B5894691CA89F27005F0B9D /* AELog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5894681CA89F27005F0B9D /* AELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B5894711CA89F6C005F0B9D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5894701CA89F6C005F0B9D /* Log.swift */; };
 		8B5CDB6D1F50FCB10078CE2E /* AELogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5CDB6B1F50FCA50078CE2E /* AELogTests.swift */; };
@@ -66,7 +62,6 @@
 		8B04F5821CB00B420002F869 /* AELog OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AELog OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B04F58F1CB060CC0002F869 /* AELog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AELog.podspec; sourceTree = "<group>"; };
 		8B04F5901CB064D20002F869 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		8B3DBCDF1FFF1EA800769460 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8B5894651CA89F27005F0B9D /* AELog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AELog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5894681CA89F27005F0B9D /* AELog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELog.h; sourceTree = "<group>"; };
 		8B58946A1CA89F27005F0B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,7 +189,6 @@
 		8B5894671CA89F27005F0B9D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8B3DBCDF1FFF1EA800769460 /* API.swift */,
 				8B5894701CA89F6C005F0B9D /* Log.swift */,
 				8BDEC8B11DB264B60074994A /* Line.swift */,
 				8B6512621FFF0A06001FB2DC /* Settings.swift */,
@@ -519,7 +513,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3DBCE01FFF1EA800769460 /* API.swift in Sources */,
 				8B5894711CA89F6C005F0B9D /* Log.swift in Sources */,
 				8B6512631FFF0A06001FB2DC /* Settings.swift in Sources */,
 				8BDEC8B21DB264B60074994A /* Line.swift in Sources */,
@@ -530,7 +523,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3DBCE31FFF1EAC00769460 /* API.swift in Sources */,
 				8B8464D61CAB4AED0027AA52 /* Log.swift in Sources */,
 				8B6512661FFF0AE7001FB2DC /* Settings.swift in Sources */,
 				8BDEC8C31DB2763A0074994A /* Line.swift in Sources */,
@@ -541,7 +533,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3DBCE11FFF1EA800769460 /* API.swift in Sources */,
 				8B8464E61CAB4B400027AA52 /* Log.swift in Sources */,
 				8B6512641FFF0AE5001FB2DC /* Settings.swift in Sources */,
 				8BDEC8B31DB264B60074994A /* Line.swift in Sources */,
@@ -552,7 +543,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3DBCE21FFF1EA800769460 /* API.swift in Sources */,
 				8B8464F51CAB4BA20027AA52 /* Log.swift in Sources */,
 				8B6512651FFF0AE6001FB2DC /* Settings.swift in Sources */,
 				8BDEC8B41DB264B60074994A /* Line.swift in Sources */,
