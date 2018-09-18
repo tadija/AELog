@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B8464CD1CAB492D0027AA52"
                BuildableName = "AELog.framework"
-               BlueprintName = "AELog OSX"
+               BlueprintName = "AELog macOS"
                ReferencedContainer = "container:AELog.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B04F5811CB00B420002F869"
-               BuildableName = "AELog OSX Tests.xctest"
-               BlueprintName = "AELog OSX Tests"
+               BuildableName = "AELog macOS Tests.xctest"
+               BlueprintName = "AELog macOS Tests"
                ReferencedContainer = "container:AELog.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B8464CD1CAB492D0027AA52"
             BuildableName = "AELog.framework"
-            BlueprintName = "AELog OSX"
+            BlueprintName = "AELog macOS"
             ReferencedContainer = "container:AELog.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B8464CD1CAB492D0027AA52"
             BuildableName = "AELog.framework"
-            BlueprintName = "AELog OSX"
+            BlueprintName = "AELog macOS"
             ReferencedContainer = "container:AELog.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B8464CD1CAB492D0027AA52"
             BuildableName = "AELog.framework"
-            BlueprintName = "AELog OSX"
+            BlueprintName = "AELog macOS"
             ReferencedContainer = "container:AELog.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
