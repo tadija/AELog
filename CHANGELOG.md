@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.5.6
+
+- Bumped Swift language version to 4.2 with Xcode 10 (10A255)
+- Reorganizing project directories and files
+
 ## Version 0.5.5
 
 - Renamed main API into `aelog` (again)
