@@ -1,6 +1,6 @@
 /**
  *  https://github.com/tadija/AELog
- *  Copyright (c) Marko Tadić 2016-2018
+ *  Copyright (c) Marko Tadić 2016-2019
  *  Licensed under the MIT license. See LICENSE file.
  */
 
@@ -55,12 +55,25 @@ public struct Line: CustomStringConvertible {
     /// Concatenated text representation of a complete log line
     public var description: String {
         let date = Log.shared.settings.dateFormatter.string(from: self.date)
-        return parse(date: date, thread: threadName, file: file, number: number, function: function, text: text)
+        return parse(
+            date: date,
+            thread: threadName,
+            file: file,
+            number: number,
+            function: function,
+            text: text
+        )
     }
 
     /// Concatenated text representation of a log line without timestamp
     public var descriptionWithoutTimestamp: String {
-        return parse(thread: threadName, file: file, number: number, function: function, text: text)
+        return parse(
+            thread: threadName,
+            file: file,
+            number: number,
+            function: function,
+            text: text
+        )
     }
     
     private func parse(date: String? = nil,
