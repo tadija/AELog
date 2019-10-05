@@ -19,15 +19,19 @@ import Foundation
 ///   - path: Calling file path (defaults to `#file`).
 ///   - lineNumber: Calling line number (defaults to `#line`).
 ///   - function: Calling function (defaults to `#function`).
-public func aelog(_ items: Any..., mode: Log.Mode = .print,
-                  path: String = #file, lineNumber: Int = #line, function: String = #function)
-{
-    Log.shared.write(mode: mode,
-                     thread: Thread.current,
-                     path: path,
-                     lineNumber: lineNumber,
-                     function: function,
-                     text: text(with: items))
+public func aelog(_ items: Any...,
+                  mode: Log.Mode = .print,
+                  path: String = #file,
+                  lineNumber: Int = #line,
+                  function: String = #function) {
+    Log.shared.write(
+        mode: mode,
+        thread: Thread.current,
+        path: path,
+        lineNumber: lineNumber,
+        function: function,
+        text: text(with: items)
+    )
 }
 
 private func text(with items: Any...) -> String {
@@ -101,14 +105,25 @@ open class Log {
     ///   - lineNumber: Calling line number
     ///   - function: Calling function
     ///   - text: Custom text
-    public func write(mode: Mode, thread: Thread, path: String, lineNumber: Int, function: String, text: String) {
+    public func write(mode: Mode,
+                      thread: Thread,
+                      path: String,
+                      lineNumber: Int,
+                      function: String,
+                      text: String) {
         queue.async { [unowned self] in
             guard self.settings.isEnabled || mode == .nsLog else {
                 return
             }
             let name = self.getFileName(for: path)
             if self.isLogEnabledForFile(with: name) || mode == .nsLog {
-                let line = Line(thread: thread, file: name, number: lineNumber, function: function, text: text)
+                let line = Line(
+                    thread: thread,
+                    file: name,
+                    number: lineNumber,
+                    function: function,
+                    text: text
+                )
                 self.log(line: line, mode: mode)
             }
         }
@@ -117,7 +132,8 @@ open class Log {
     // MARK: Helpers
     
     private func getFileName(for path: String) -> String {
-        guard let fileName = NSURL(fileURLWithPath: path).deletingPathExtension?.lastPathComponent else {
+        guard let fileName = NSURL(fileURLWithPath: path)
+            .deletingPathExtension?.lastPathComponent else {
             return "Unknown"
         }
         return fileName
@@ -137,7 +153,7 @@ open class Log {
         case .nsLog:
             NSLog(line.descriptionWithoutTimestamp)
         }
-        self.delegate?.didLog(line: line, mode: mode)
+        delegate?.didLog(line: line, mode: mode)
     }
     
 }
