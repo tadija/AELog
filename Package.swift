@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 /**
  *  https://github.com/tadija/AELog
@@ -10,8 +10,17 @@ import PackageDescription
 
 let package = Package(
     name: "AELog",
+    platforms: [
+        .macOS(.v10_10),
+        .iOS(.v8),
+        .tvOS(.v9),
+        .watchOS(.v3)
+    ],
     products: [
-        .library(name: "AELog", targets: ["AELog"])
+        .library(
+            name: "AELog",
+            targets: ["AELog"]
+        )
     ],
     targets: [
         .target(
