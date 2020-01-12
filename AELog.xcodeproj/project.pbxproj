@@ -795,7 +795,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SKIP_INSTALL = YES;
@@ -816,7 +816,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SKIP_INSTALL = YES;
@@ -838,6 +838,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
@@ -860,6 +861,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
@@ -879,6 +881,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
@@ -900,6 +903,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
@@ -921,6 +925,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
@@ -942,6 +947,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
