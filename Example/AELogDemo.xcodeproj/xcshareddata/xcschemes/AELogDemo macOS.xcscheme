@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B01E8C81CADE2E00049F98E"
-               BuildableName = "AELogDemo OSX.app"
-               BlueprintName = "AELogDemo OSX"
+               BuildableName = "AELogDemo macOS.app"
+               BlueprintName = "AELogDemo macOS"
                ReferencedContainer = "container:AELogDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,8 +31,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B01E8C81CADE2E00049F98E"
-            BuildableName = "AELogDemo OSX.app"
-            BlueprintName = "AELogDemo OSX"
+            BuildableName = "AELogDemo macOS.app"
+            BlueprintName = "AELogDemo macOS"
             ReferencedContainer = "container:AELogDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,8 +54,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B01E8C81CADE2E00049F98E"
-            BuildableName = "AELogDemo OSX.app"
-            BlueprintName = "AELogDemo OSX"
+            BuildableName = "AELogDemo macOS.app"
+            BlueprintName = "AELogDemo macOS"
             ReferencedContainer = "container:AELogDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,8 +71,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B01E8C81CADE2E00049F98E"
-            BuildableName = "AELogDemo OSX.app"
-            BlueprintName = "AELogDemo OSX"
+            BuildableName = "AELogDemo macOS.app"
+            BlueprintName = "AELogDemo macOS"
             ReferencedContainer = "container:AELogDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

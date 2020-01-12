@@ -1,7 +1,7 @@
 /**
  *  https://github.com/tadija/AELog
- *  Copyright (c) Marko Tadić 2016-2019
- *  Licensed under the MIT license. See LICENSE file.
+ *  Copyright © 2016-2020 Marko Tadić
+ *  Licensed under the MIT license
  */
 
 import UIKit
@@ -12,8 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
         aelog()
         return true
     }

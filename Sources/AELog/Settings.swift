@@ -1,7 +1,7 @@
 /**
  *  https://github.com/tadija/AELog
- *  Copyright (c) Marko Tadić 2016-2019
- *  Licensed under the MIT license. See LICENSE file.
+ *  Copyright © 2016-2020 Marko Tadić
+ *  Licensed under the MIT license
  */
 
 import Foundation
@@ -29,7 +29,8 @@ open class Settings {
         }
     }
 
-    /// Log lines template. (defaults to "{date} -- [{thread}] {file} ({line}) -> {function} > {text}")
+    /// Log lines template.
+    /// Defaults to: "{date} -- [{thread}] {file} ({line}) -> {function} > {text}"
     public var template = Defaults.template
 
     /// Key: file name without extension (defaults to empty - logging enabled in all files)
