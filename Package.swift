@@ -1,9 +1,9 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 
 /**
  *  https://github.com/tadija/AELog
- *  Copyright (c) Marko Tadić 2016-2019
- *  Licensed under the MIT license. See LICENSE file.
+ *  Copyright © 2016-2020 Marko Tadić
+ *  Licensed under the MIT license
  */
 
 import PackageDescription
@@ -11,8 +11,8 @@ import PackageDescription
 let package = Package(
     name: "AELog",
     platforms: [
-        .macOS(.v10_10),
         .iOS(.v8),
+        .macOS(.v10_10),
         .tvOS(.v9),
         .watchOS(.v3)
     ],

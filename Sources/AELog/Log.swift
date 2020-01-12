@@ -1,17 +1,17 @@
 /**
  *  https://github.com/tadija/AELog
- *  Copyright (c) Marko Tadić 2016-2019
- *  Licensed under the MIT license. See LICENSE file.
+ *  Copyright © 2016-2020 Marko Tadić
+ *  Licensed under the MIT license
  */
 
 import Foundation
 
 // MARK: - API / Main
 
-/// Writes the textual representation of input parameters into the standard debugger and/or device output.
+/// Writes textual representation of input parameters into the standard debugger / device output.
 ///
-/// - Note: `Log.Mode.print` is used by default, so if logging is not enabled in settings this will do nothing.
-/// - Warning: If called with `Log.Mode.nsLog` it will work wether logging is enabled in settings or not.
+/// - Note: `Log.Mode.print` is default, if logging is not enabled in settings it will do nothing.
+/// - Warning: `Log.Mode.nsLog` will work wether logging is enabled in settings or not.
 ///
 /// - Parameters:
 ///   - items: Variadic parameter (zero or more values of a `Any` type).
@@ -95,7 +95,7 @@ open class Log {
 
     /// Performs printing to standard output based on input parameters.
     ///
-    /// `Mode.print` will work only if logging is enabled and specific file is not disabled in `settings`.
+    /// `Mode.print` works only if logging is enabled & specific file not disabled in `settings`.
     /// `Mode.nsLog` will always work irrespective of other settings.
     ///
     /// - Parameters:
