@@ -102,7 +102,7 @@ Have you ever wanted to see the output of your app while you're not at your comp
 - [Swift Package Manager](https://swift.org/package-manager/):
     
     ```swift
-    .package(url: "https://github.com/tadija/AELog.git", from: "0.6.1")
+    .package(url: "https://github.com/tadija/AELog.git", from: "0.6.2")
     ```
 
 - [Carthage](https://github.com/Carthage/Carthage):

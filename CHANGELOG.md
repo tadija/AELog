@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.6.2
+
+- Bump iOS deployment target to 9.0 (to fix build warning in Xcode 12)
+- Upgrade project to recommended settings with Xcode 12
+
 ## Version 0.6.1
 
 - Minor changes
