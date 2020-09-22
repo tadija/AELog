@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 
 /**
  *  https://github.com/tadija/AELog
@@ -11,7 +11,7 @@ import PackageDescription
 let package = Package(
     name: "AELog",
     platforms: [
-        .iOS(.v8),
+        .iOS(.v9),
         .macOS(.v10_10),
         .tvOS(.v9),
         .watchOS(.v3)
