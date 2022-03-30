@@ -54,7 +54,7 @@ private func text(with items: Any...) -> String {
 
 // MARK: - LogDelegate
 
-public protocol LogDelegate: class {
+public protocol LogDelegate: AnyObject {
     /// Forwards the latest log line.
     /// This method is called from logging queue, dispatch to main queue if needed.
     ///
