@@ -132,11 +132,14 @@ open class Log {
     // MARK: Helpers
     
     private func getFileName(for path: String) -> String {
-        guard let fileName = NSURL(fileURLWithPath: path)
-            .deletingPathExtension?.lastPathComponent else {
+        let filename = URL(fileURLWithPath: path)
+            .deletingPathExtension().lastPathComponent
+
+        guard !filename.isEmpty else {
             return "Unknown"
         }
-        return fileName
+
+        return filename
     }
     
     private func isLogEnabledForFile(with fileName: String) -> Bool {
