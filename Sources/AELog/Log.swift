@@ -1,6 +1,6 @@
 /**
  *  https://github.com/tadija/AELog
- *  Copyright © 2016-2020 Marko Tadić
+ *  Copyright © 2016-2022 Marko Tadić
  *  Licensed under the MIT license
  */
 
@@ -35,7 +35,7 @@ public func aelog(_ items: Any...,
 }
 
 private func text(with items: Any...) -> String {
-    let array = items.first.unsafelyUnwrapped as! [Any]
+    let array = items.first as? [Any] ?? items as [Any]
     switch array.count {
     case 0:
         return String()
@@ -54,7 +54,7 @@ private func text(with items: Any...) -> String {
 
 // MARK: - LogDelegate
 
-public protocol LogDelegate: class {
+public protocol LogDelegate: AnyObject {
     /// Forwards the latest log line.
     /// This method is called from logging queue, dispatch to main queue if needed.
     ///
@@ -132,11 +132,14 @@ open class Log {
     // MARK: Helpers
     
     private func getFileName(for path: String) -> String {
-        guard let fileName = NSURL(fileURLWithPath: path)
-            .deletingPathExtension?.lastPathComponent else {
+        let filename = URL(fileURLWithPath: path)
+            .deletingPathExtension().lastPathComponent
+
+        guard !filename.isEmpty else {
             return "Unknown"
         }
-        return fileName
+
+        return filename
     }
     
     private func isLogEnabledForFile(with fileName: String) -> Bool {

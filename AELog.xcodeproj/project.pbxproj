@@ -72,8 +72,6 @@
 		8BAA311B2151A236006142AC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8BAA311C2151A236006142AC /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8BAA312B2151A243006142AC /* AELogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AELogTests.swift; sourceTree = "<group>"; };
-		8BAA31332151A478006142AC /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		8BAA31342151A482006142AC /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 		8BE817A81CAF42C500FCBE4A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8BE817A91CAF42C500FCBE4A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8BE817AA1CAF42C500FCBE4A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				8BAA312A2151A243006142AC /* AELogTests */,
-				8BAA31342151A482006142AC /* LinuxMain.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -213,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				8BAA312B2151A243006142AC /* AELogTests.swift */,
-				8BAA31332151A478006142AC /* XCTestManifests.swift */,
 			);
 			path = AELogTests;
 			sourceTree = "<group>";
@@ -314,9 +310,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B58946D1CA89F27005F0B9D /* Build configuration list for PBXNativeTarget "AELog iOS" */;
 			buildPhases = (
+				8B5894621CA89F27005F0B9D /* Headers */,
 				8B5894601CA89F27005F0B9D /* Sources */,
 				8B5894611CA89F27005F0B9D /* Frameworks */,
-				8B5894621CA89F27005F0B9D /* Headers */,
 				8B5894631CA89F27005F0B9D /* Resources */,
 			);
 			buildRules = (
@@ -332,9 +328,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B8464D31CAB492D0027AA52 /* Build configuration list for PBXNativeTarget "AELog macOS" */;
 			buildPhases = (
+				8B8464CB1CAB492D0027AA52 /* Headers */,
 				8B8464C91CAB492D0027AA52 /* Sources */,
 				8B8464CA1CAB492D0027AA52 /* Frameworks */,
-				8B8464CB1CAB492D0027AA52 /* Headers */,
 				8B8464CC1CAB492D0027AA52 /* Resources */,
 			);
 			buildRules = (
@@ -350,9 +346,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B8464E31CAB4B310027AA52 /* Build configuration list for PBXNativeTarget "AELog watchOS" */;
 			buildPhases = (
+				8B8464DB1CAB4B310027AA52 /* Headers */,
 				8B8464D91CAB4B310027AA52 /* Sources */,
 				8B8464DA1CAB4B310027AA52 /* Frameworks */,
-				8B8464DB1CAB4B310027AA52 /* Headers */,
 				8B8464DC1CAB4B310027AA52 /* Resources */,
 			);
 			buildRules = (
@@ -368,9 +364,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B8464F21CAB4B870027AA52 /* Build configuration list for PBXNativeTarget "AELog tvOS" */;
 			buildPhases = (
+				8B8464EA1CAB4B870027AA52 /* Headers */,
 				8B8464E81CAB4B870027AA52 /* Sources */,
 				8B8464E91CAB4B870027AA52 /* Frameworks */,
-				8B8464EA1CAB4B870027AA52 /* Headers */,
 				8B8464EB1CAB4B870027AA52 /* Resources */,
 			);
 			buildRules = (
@@ -389,7 +385,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = AE;
 				TargetAttributes = {
 					8B04F5621CB009DD0002F869 = {
@@ -437,10 +433,10 @@
 			targets = (
 				8B5894641CA89F27005F0B9D /* AELog iOS */,
 				8B8464DD1CAB4B310027AA52 /* AELog watchOS */,
-				8B04F5621CB009DD0002F869 /* AELog iOS Tests */,
 				8B8464EC1CAB4B870027AA52 /* AELog tvOS */,
-				8B04F5711CB00AA60002F869 /* AELog tvOS Tests */,
 				8B8464CD1CAB492D0027AA52 /* AELog macOS */,
+				8B04F5621CB009DD0002F869 /* AELog iOS Tests */,
+				8B04F5711CB00AA60002F869 /* AELog tvOS Tests */,
 				8B04F5811CB00B420002F869 /* AELog macOS Tests */,
 			);
 		};
@@ -710,7 +706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 0.6.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -719,7 +715,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
@@ -770,7 +766,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 0.6.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -778,7 +774,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -799,6 +795,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SKIP_INSTALL = YES;
@@ -819,6 +816,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SKIP_INSTALL = YES;
@@ -839,6 +837,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
@@ -860,6 +859,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = macosx;
@@ -879,6 +879,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
@@ -899,6 +900,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = watchos;
@@ -919,6 +921,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;
@@ -939,6 +942,7 @@
 				INFOPLIST_FILE = Resources/AELog.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.AELog;
 				PRODUCT_NAME = AELog;
 				SDKROOT = appletvos;

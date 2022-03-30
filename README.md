@@ -1,4 +1,4 @@
-[![Language Swift 5.1](https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat)](https://swift.org)
+[![Language Swift 5.5](https://img.shields.io/badge/Swift-5.5-orange.svg?style=flat)](https://swift.org)
 [![Platforms iOS | watchOS | tvOS | macOS](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-lightgray.svg?style=flat)](http://www.apple.com)
 [![CocoaPods](https://img.shields.io/cocoapods/v/AELog.svg?style=flat)](https://cocoapods.org/pods/AELog)
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -102,7 +102,7 @@ Have you ever wanted to see the output of your app while you're not at your comp
 - [Swift Package Manager](https://swift.org/package-manager/):
     
     ```swift
-    .package(url: "https://github.com/tadija/AELog.git", from: "0.6.2")
+    .package(url: "https://github.com/tadija/AELog.git", from: "0.6.3")
     ```
 
 - [Carthage](https://github.com/Carthage/Carthage):
