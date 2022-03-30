@@ -35,7 +35,7 @@ public func aelog(_ items: Any...,
 }
 
 private func text(with items: Any...) -> String {
-    let array = items.first.unsafelyUnwrapped as! [Any]
+    let array = items.first as? [Any] ?? items as [Any]
     switch array.count {
     case 0:
         return String()
